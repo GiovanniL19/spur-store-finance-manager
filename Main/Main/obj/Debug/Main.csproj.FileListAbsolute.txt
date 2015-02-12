@@ -11,3 +11,6 @@ C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment
 C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.exe
 C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.pdb
 C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.csprojResolveAssemblyReference.cache
+C:\Users\Giovanni\Documents\University\Tasked Based\A1\Main\Main\bin\Debug\Main.exe.config
+C:\Users\Giovanni\Documents\University\Tasked Based\A1\Main\Main\obj\Debug\Main.exe
+C:\Users\Giovanni\Documents\University\Tasked Based\A1\Main\Main\obj\Debug\Main.pdb
