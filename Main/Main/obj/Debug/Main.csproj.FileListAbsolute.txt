@@ -11,6 +11,19 @@ C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment
 C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.exe
 C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.pdb
 C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.csprojResolveAssemblyReference.cache
-C:\Users\Giovanni\Documents\University\Tasked Based\A1\Main\Main\bin\Debug\Main.exe.config
-C:\Users\Giovanni\Documents\University\Tasked Based\A1\Main\Main\obj\Debug\Main.exe
-C:\Users\Giovanni\Documents\University\Tasked Based\A1\Main\Main\obj\Debug\Main.pdb
+D:\Users\Giovanni\Documents\Uni\Main\Main\bin\Debug\Main.exe.config
+D:\Users\Giovanni\Documents\Uni\Main\Main\bin\Debug\Main.exe
+D:\Users\Giovanni\Documents\Uni\Main\Main\bin\Debug\Main.pdb
+D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Report.baml
+D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Report.g.cs
+D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\App.g.cs
+D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Main_MarkupCompile.cache
+D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Main.g.resources
+D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Main.Properties.Resources.resources
+D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Main.csproj.GenerateResource.Cache
+D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Main.exe
+D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Main.pdb
+D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Main.csprojResolveAssemblyReference.cache
+C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\bin\Debug\Main.exe.config
+C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\obj\Debug\Main.exe
+C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\obj\Debug\Main.pdb

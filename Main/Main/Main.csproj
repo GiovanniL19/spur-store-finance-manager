@@ -95,20 +95,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="folderIcon.png" />
+    <Resource Include="Icons\addFolder.png" />
+    <Resource Include="Icons\bin.png" />
+    <Resource Include="Icons\print.png" />
+    <Resource Include="Icons\report.png" />
+    <Resource Include="Icons\settings.png" />
+    <Resource Include="Icons\view.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="reportIcon.png" />
-    <Resource Include="settingsIcon.png" />
+    <Resource Include="Icons\filter.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="view.png" />
+    <Resource Include="Icons\sad.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="p.jpg" />
+    <Resource Include="Icons\save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
