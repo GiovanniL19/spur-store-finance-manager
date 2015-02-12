@@ -109,7 +109,7 @@ namespace Main
         }
         private void printDataBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("No Data To Print");
+            Print();
         }
         private void settingsBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -122,6 +122,15 @@ namespace Main
         {
             reportGenText.SelectAll();
             reportGenText.Selection.Text = "";
+        }
+        private void Print()
+        {
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+            {   
+                printDialog.PrintVisual(reportGenText as Visual, "printing as visual");
+                printDialog.PrintDocument((((IDocumentPaginatorSource)reportGenText.Document).DocumentPaginator), "Print Report");
+            }
         }
         
     }
