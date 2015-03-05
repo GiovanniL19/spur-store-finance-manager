@@ -16,3 +16,21 @@ C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment
 C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Manager.csprojResolveAssemblyReference.cache
 C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\About.baml
 C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\About.g.cs
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.exe.config
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.exe
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.pdb
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.exe
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.pdb
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\nunit.framework.xml
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Manager.csprojResolveAssemblyReference.cache
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\About.baml
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Report.baml
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Welcome.baml
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\About.g.cs
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Report.g.cs
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Welcome.g.cs
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\App.g.cs
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main_MarkupCompile.cache
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.g.resources
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.Properties.Resources.resources
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Manager.csproj.GenerateResource.Cache

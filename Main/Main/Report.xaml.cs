@@ -295,5 +295,11 @@ namespace Main
             try { type = supplierTypeList.SelectedItem.ToString(); }
             catch (Exception) { }
         }
+
+        private void help_Click(object sender, RoutedEventArgs e)
+        {
+            Welcome help = new Welcome();
+            help.Show();
+        }
     }
 }

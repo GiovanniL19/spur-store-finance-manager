@@ -149,6 +149,8 @@
                 <MenuItem Header="_Preferences" Cursor="Hand" Foreground="Black">
                     <MenuItem Header="_Load Stores" Click="loadStores_Click" Cursor="Hand"/>
                     <MenuItem Header="_Settings" Cursor="Hand"/>
+                    <Separator></Separator>
+                    <MenuItem Header="_Help" Cursor="Hand" Click="help_Click"/>
                 </MenuItem>
                 <MenuItem Header="_About" Cursor="Hand" Foreground="Black" Click="aboutBtn_Click"/>
             </Menu>
@@ -161,8 +163,8 @@
             <Label Content="Time Taken:" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="White"/>
             <Label x:Name="timeTaken" Content="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="White"/>
         </DockPanel>
-        <DataGrid x:Name="reportGrid" Margin="498,117,252,29" Background="White" BorderBrush="#FFC7C7C7" SelectionMode="Extended" Foreground="#FF464646" BorderThickness="0" HorizontalGridLinesBrush="#FFC3C3C3" VerticalGridLinesBrush="#FFC3C3C3" GridLinesVisibility="Vertical" HeadersVisibility="Column" />
-        <DataGrid x:Name="reportGridGen" Margin="192,117,0,29" Background="White" BorderBrush="#FF787878" SelectionMode="Extended" Foreground="#FF464646" BorderThickness="0" HorizontalGridLinesBrush="#FFC3C3C3" VerticalGridLinesBrush="#FFC3C3C3" GridLinesVisibility="Vertical" HeadersVisibility="Column" HorizontalAlignment="Left" Width="304"/>
+        <DataGrid x:Name="reportGrid" Margin="498,117,252,29" Background="White" BorderBrush="#FFC7C7C7" SelectionMode="Extended" Foreground="#FF464646" BorderThickness="0" HorizontalGridLinesBrush="#FFC3C3C3" VerticalGridLinesBrush="#FFC3C3C3" GridLinesVisibility="Vertical" HeadersVisibility="Column" CanUserReorderColumns="False" CanUserSortColumns="False" IsReadOnly="True" />
+        <DataGrid x:Name="reportGridGen" Margin="192,117,0,29" Background="White" BorderBrush="#FF787878" SelectionMode="Extended" Foreground="#FF464646" BorderThickness="0" HorizontalGridLinesBrush="#FFC3C3C3" VerticalGridLinesBrush="#FFC3C3C3" GridLinesVisibility="Vertical" HeadersVisibility="Column" HorizontalAlignment="Left" Width="304" CanUserReorderColumns="False" CanUserSortColumns="False" IsReadOnly="True"/>
         <DockPanel LastChildFill="False" Margin="0,94,0,29" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="#FFE8E8E8" HorizontalAlignment="Right" Width="247">
             <Label Content="Selected Data" Margin="0, 0, 20, 0" DockPanel.Dock="Top" VerticalAlignment="Top"/>
             <Grid Height="56" VerticalAlignment="Center" DockPanel.Dock="Top" Margin="10,0">
