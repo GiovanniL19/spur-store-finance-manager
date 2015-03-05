@@ -116,6 +116,7 @@ namespace Main
 
                 sW.Start();
                 folder.getFiles(folderDialog.SelectedPath);
+
                 Task watcherTask = new Task(this.GUI_Update);
                 watcherTask.Start();
             }
@@ -130,23 +131,17 @@ namespace Main
             folder.getFilesTask.Wait();
             
             result = new List<Order>(folder.getFilesTask.Result);
-            HashSet<string> supplier = new HashSet<string>();
+            HashSet<string> suppliers = new HashSet<string>();
             HashSet<string> type = new HashSet<string>();
 
             for (int i = 0; i < result.Count(); i++)
-            {   
-                if (result[i].Supplier != null)
+            {
+                if (result[i].Supplier != null && suppliers.Contains(result[i].Supplier) || result[i].Type != null && type.Contains(result[i].Type))
                 {
-                    supplier.Add(result[i].Supplier);
-                }
-                if (result[i].Type != null)
-                {
+                    suppliers.Add(result[i].Supplier);
                     type.Add(result[i].Type);
                 }
             }
-
-            folder.getFilesTask.Dispose();
-            
             Dispatcher.Invoke(new Action(() =>{
                 itemsParsedCount.Content = result.Count();
                 reportGrid.ItemsSource = result;
@@ -160,23 +155,20 @@ namespace Main
                 itemType.Content = "Select Supplier Type";
                 supplierTypeList.Items.Add(itemType);
                 supplierTypeList.SelectedItem = itemType;
-                
-                foreach(var supplierItem in supplier)
+            
+                foreach(var supplierItem in suppliers)
                 {
                     CBItem itemAdd = new CBItem();
                     itemAdd.Content = supplierItem;
-
                     supplierList.Items.Add(itemAdd);
                 }
 
                 foreach (var typeItem in type)
                 {
                     CBItem itemAdd = new CBItem();
-                    itemAdd.Content = typeItem;
-
+                    itemAdd.Content = typeItem;   
                     supplierTypeList.Items.Add(itemAdd);
                 }
-                
                 sW.Stop();
                 status.Content = "Complete";
                 timeTaken.Content = sW.Elapsed;

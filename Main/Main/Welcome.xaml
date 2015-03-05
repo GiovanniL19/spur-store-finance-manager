@@ -28,6 +28,6 @@
         </Button>
         <Label Content="Welcome" HorizontalAlignment="Center" Margin="11,-3,16,0" VerticalAlignment="Top" FontSize="20" Width="521" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="46" FontWeight="Bold"/>
         <CheckBox x:Name="welcomeCheck" Content="Show Welcome" Margin="0,0,16,10" FontSize="10" Click="welcomeCheck_CheckedChanged" IsChecked="True" HorizontalAlignment="Right" Width="96" Grid.Row="1" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="4,0,0,0" Height="26"/>
-        <Label Content="Note: The first initial folder select will take slightly longer. This is normal" HorizontalAlignment="Center" Margin="11,27,16,0" VerticalAlignment="Top" FontSize="9" Width="521" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="21"/>
+        <Label Content="Note: The first initial folder select will take slightly longer." HorizontalAlignment="Center" Margin="11,27,16,0" VerticalAlignment="Top" FontSize="9" Width="521" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="21"/>
     </Grid>
 </Window>
