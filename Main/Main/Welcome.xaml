@@ -1,0 +1,33 @@
+﻿<Window x:Class="Main.Welcome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="349" Width="554" Topmost="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ShowInTaskbar="False" Icon="Icons/stores.png">
+    <Grid Margin="0,0,0,1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="248*"/>
+        </Grid.RowDefinitions>
+        <Button VerticalAlignment="Center" Height="230" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" HorizontalAlignment="Center" Width="169" BorderThickness="0" Click="close_Click" Margin="15,48,364,41" Grid.RowSpan="2">
+            <StackPanel>
+                <Image x:Name="binIcon" Height="75" Width="74" Source="Icons/stores.png" Margin="0,10" />
+                <TextBlock HorizontalAlignment="Left" Height="19" FontSize="13" FontWeight="Bold" Width="94" Margin="10,0"><Run Text="1: Select Stores"/></TextBlock>
+                <TextBlock HorizontalAlignment="Center" Height="68" Width="136" VerticalAlignment="Center" Margin="10,5"><Run Text="To get started select your"/><LineBreak/><Run Text="stores list. This will"/><LineBreak/><Run Text="populate the flter's"/><LineBreak/><Run Text="with stores"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button VerticalAlignment="Center" Height="230" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" HorizontalAlignment="Center" Width="169" BorderThickness="0" Click="close_Click" Margin="189,48,190,41" Grid.RowSpan="2">
+            <StackPanel>
+                <Image x:Name="binIcon1" Height="75" Width="74" Source="Icons/addFolder.png" Margin="0,10" />
+                <TextBlock HorizontalAlignment="Left" Height="19" FontSize="13" FontWeight="Bold" Width="94" Margin="10,0"><Run Text="2: Select Folder"/></TextBlock>
+                <TextBlock HorizontalAlignment="Center" Height="54" Width="122" VerticalAlignment="Center" Margin="10,5"><Run Text="Select a folder full of"/><LineBreak/><Run Text="your store orders"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button VerticalAlignment="Center" Height="230" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" HorizontalAlignment="Center" Width="169" BorderThickness="0" Click="close_Click" Margin="363,48,16,41" Grid.RowSpan="2">
+            <StackPanel>
+                <Image x:Name="filter" Height="75" Width="74" Source="Icons/filter.png" Margin="0,10" />
+                <TextBlock HorizontalAlignment="Left" Height="19" FontSize="13" FontWeight="Bold" Width="94" Margin="10,0"><Run Text="3: Filter"/></TextBlock>
+                <TextBlock HorizontalAlignment="Center" Height="54" Width="129" VerticalAlignment="Center" Margin="10,5"><Run Text="Now you can filter"/><LineBreak/><Run Text="through your CSV files"/><LineBreak/><Run Text="from the folder"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Label Content="Welcome" HorizontalAlignment="Center" Margin="11,-3,16,0" VerticalAlignment="Top" FontSize="20" Width="521" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="46" FontWeight="Bold"/>
+        <CheckBox x:Name="welcomeCheck" Content="Show Welcome" Margin="0,0,16,10" FontSize="10" Click="welcomeCheck_CheckedChanged" IsChecked="True" HorizontalAlignment="Right" Width="96" Grid.Row="1" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="4,0,0,0" Height="26"/>
+        <Label Content="Note: The first initial folder select will take slightly longer. This is normal" HorizontalAlignment="Center" Margin="11,27,16,0" VerticalAlignment="Top" FontSize="9" Width="521" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="21"/>
+    </Grid>
+</Window>

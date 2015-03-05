@@ -1,16 +1,3 @@
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Report.baml
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Report.g.cs
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\App.g.cs
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main_MarkupCompile.cache
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.g.resources
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\bin\Debug\Main.exe.config
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\bin\Debug\Main.exe
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\bin\Debug\Main.pdb
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.Properties.Resources.resources
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.csproj.GenerateResource.Cache
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.exe
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.pdb
-C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.csprojResolveAssemblyReference.cache
 D:\Users\Giovanni\Documents\Uni\Main\Main\bin\Debug\Main.exe.config
 D:\Users\Giovanni\Documents\Uni\Main\Main\bin\Debug\Main.exe
 D:\Users\Giovanni\Documents\Uni\Main\Main\bin\Debug\Main.pdb
@@ -24,16 +11,22 @@ D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Main.csproj.GenerateResource
 D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Main.exe
 D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Main.pdb
 D:\Users\Giovanni\Documents\Uni\Main\Main\obj\Debug\Main.csprojResolveAssemblyReference.cache
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\bin\Debug\Main.exe.config
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\obj\Debug\Main.exe
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\obj\Debug\Main.pdb
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\bin\Debug\Main.exe
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\bin\Debug\Main.pdb
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\obj\Debug\Main.csprojResolveAssemblyReference.cache
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\obj\Debug\Report.baml
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\obj\Debug\Report.g.cs
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\obj\Debug\App.g.cs
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\obj\Debug\Main_MarkupCompile.cache
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\obj\Debug\Main.g.resources
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\obj\Debug\Main.Properties.Resources.resources
-C:\Users\Giovanni\Source\Repos\csv-manage\Main\Main\obj\Debug\Main.csproj.GenerateResource.Cache
+D:\Users\Giovanni\Documents\Main\Main\bin\Debug\Main.exe.config
+D:\Users\Giovanni\Documents\Main\Main\obj\Debug\Main.exe
+D:\Users\Giovanni\Documents\Main\Main\obj\Debug\Main.pdb
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\bin\Debug\Main.exe.config
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\bin\Debug\Main.exe
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\bin\Debug\Main.pdb
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.csprojResolveAssemblyReference.cache
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Report.baml
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Report.g.cs
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\App.g.cs
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main_MarkupCompile.cache
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.g.resources
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.Properties.Resources.resources
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.csproj.GenerateResource.Cache
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.exe
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Main.pdb
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\bin\Debug\nunit.framework.xml
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Welcome.baml
+C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Welcome.g.cs
