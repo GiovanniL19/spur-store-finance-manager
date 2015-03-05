@@ -66,7 +66,6 @@
     <Compile Include="Command.cs" />
     <Compile Include="GenerateReport.cs" />
     <Compile Include="Objects\Report.cs" />
-    <Compile Include="Tests\TestCSV.cs" />
     <Compile Include="Welcome.xaml.cs">
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>

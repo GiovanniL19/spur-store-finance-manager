@@ -134,14 +134,14 @@ namespace Main
             HashSet<string> suppliers = new HashSet<string>();
             HashSet<string> type = new HashSet<string>();
 
-            for (int i = 0; i < result.Count(); i++)
+            Parallel.For (0, result.Count(), i =>
             {
                 if (result[i].Supplier != null && suppliers.Contains(result[i].Supplier) || result[i].Type != null && type.Contains(result[i].Type))
                 {
                     suppliers.Add(result[i].Supplier);
                     type.Add(result[i].Type);
                 }
-            }
+            });
             Dispatcher.Invoke(new Action(() =>{
                 itemsParsedCount.Content = result.Count();
                 reportGrid.ItemsSource = result;
