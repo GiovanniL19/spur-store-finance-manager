@@ -17,6 +17,9 @@ namespace Main
     /// <summary>
     /// Interaction logic for Welcome.xaml
     /// </summary>
+    /// Developed by Giovanni Lenguito
+    /// University: Staffordshire University
+    /// Student ID: L010516C
     public partial class Welcome : Window
     {
         public Welcome()

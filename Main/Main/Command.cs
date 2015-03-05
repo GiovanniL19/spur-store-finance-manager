@@ -8,6 +8,9 @@ using System.Windows.Media;
 
 namespace Main
 {
+    /// Developed by Giovanni Lenguito
+    /// University: Staffordshire University
+    /// Student ID: L010516C
     public class Command
     {
         public void Print(DataGrid content){

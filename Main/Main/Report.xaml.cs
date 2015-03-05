@@ -23,6 +23,9 @@ namespace Main
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// Developed by Giovanni Lenguito
+    /// University: Staffordshire University
+    /// Student ID: L010516C
     public partial class MainWindow : Window
     {
         
@@ -35,6 +38,8 @@ namespace Main
                 welcomeScreen.Show();
             }
         }
+
+
         public Folder folder;
         public GenerateReport gen = new GenerateReport();
         public Command command;
@@ -61,6 +66,7 @@ namespace Main
             }
             else
             {
+                //Generate Report
                 reportGridGen.ClearValue(ItemsControl.ItemsSourceProperty);
                 reportGridGen.Items.Clear();
                 reportGridGen.Items.Refresh();
@@ -70,8 +76,11 @@ namespace Main
                 {
                     report = null;
                 }
+
+                //Send data to GenerateReport
                 gen.GenerateTheReport(weeksSelection, result.ToList(), store, year, supplier, type);
 
+                //Start the watchReport to wait for task to complete
                 Task watchReport = new Task(this.Report_Update);
                 watchReport.Start();
             }
@@ -79,12 +88,16 @@ namespace Main
 
         private void Report_Update()
         {
+            //Task will wait until the report is generate and that tasks returns a value
             gen.reportGenTask.Wait();
+            //Store the returned data in a list full of Report objects
             report = new List<Report>(gen.reportGenTask.Result);
+
             if (report.Count > 0)
             {
                 Dispatcher.Invoke(new Action(() =>
                 {
+                    //prints report to labels and data grid
                     numberOfReport.Content = report.Count().ToString();
                     
                     gTotal.Content = gen.getgTotal();
@@ -104,6 +117,8 @@ namespace Main
 
         public void selectFolder()
         {
+            //Select a folder to read from
+
             System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
 
             if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -114,34 +129,49 @@ namespace Main
 
                 folder = new Folder();
 
-                sW.Start();
+                sW.Start(); //start stopwatch
+
+                //Send selected folder path to folder class
                 folder.getFiles(folderDialog.SelectedPath);
 
+                //Start the watchReport to wait for task to complete
                 Task watcherTask = new Task(this.GUI_Update);
                 watcherTask.Start();
             }
         }
+
         private void selectFolderBtn_Click(object sender, RoutedEventArgs e)
         {
+            //go to selectFolder Method
             selectFolder();
         }
 
         private void GUI_Update()
         {
+            //Task will wait until the files have been parsed
             folder.getFilesTask.Wait();
             
+            //The parrsed data object will be stored in a new list
             result = new List<Order>(folder.getFilesTask.Result);
+
+            //Hashset are used to remove duplicates
             HashSet<string> suppliers = new HashSet<string>();
-            HashSet<string> type = new HashSet<string>();
+            HashSet<string> types = new HashSet<string>();
+
 
             Parallel.For (0, result.Count(), i =>
             {
-                if (result[i].Supplier != null && suppliers.Contains(result[i].Supplier) || result[i].Type != null && type.Contains(result[i].Type))
+                if (result[i].Supplier != null)
                 {
                     suppliers.Add(result[i].Supplier);
-                    type.Add(result[i].Type);
+                }
+                if (result[i].Type != null)
+                {
+                    types.Add(result[i].Type);
                 }
             });
+
+            //Prints data to user
             Dispatcher.Invoke(new Action(() =>{
                 itemsParsedCount.Content = result.Count();
                 reportGrid.ItemsSource = result;
@@ -155,38 +185,50 @@ namespace Main
                 itemType.Content = "Select Supplier Type";
                 supplierTypeList.Items.Add(itemType);
                 supplierTypeList.SelectedItem = itemType;
-            
+             
+
+                //Populates comboboxes
                 foreach(var supplierItem in suppliers)
                 {
                     CBItem itemAdd = new CBItem();
                     itemAdd.Content = supplierItem;
+                
                     supplierList.Items.Add(itemAdd);
                 }
 
-                foreach (var typeItem in type)
+                foreach (var typeItem in types)
                 {
-                    CBItem itemAdd = new CBItem();
-                    itemAdd.Content = typeItem;   
-                    supplierTypeList.Items.Add(itemAdd);
+                    if (typeItem != null)
+                    {
+                        CBItem itemAdd = new CBItem();
+                        itemAdd.Content = typeItem;
+                        supplierTypeList.Items.Add(itemAdd);
+                    }
                 }
+
+                //End timer and set status to complete
                 sW.Stop();
                 status.Content = "Complete";
                 timeTaken.Content = sW.Elapsed;
             }));
+           
         }
 
         private void printDataBtn_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("There are no reports to print", "Print", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
+
         private void settingsBtn_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Settings feature currently unavailable", "Settings", MessageBoxButton.OK, MessageBoxImage.Stop);
         }
+
         private void exitBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
         private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
             Save();
@@ -209,6 +251,7 @@ namespace Main
 
         public void selectStore()
         {
+            //Select the store csv
             OpenFileDialog storeFileDialog = new OpenFileDialog();
 
             if (storeFileDialog.ShowDialog() == true)
@@ -229,6 +272,7 @@ namespace Main
 
                         storesList.SelectedItem = AllStores;
 
+                        //reads the stores and populates combobox
                         while ((line = readFile.ReadLine()) != null)
                         {
                             String[] split = line.Split(',');

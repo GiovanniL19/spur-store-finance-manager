@@ -9,6 +9,9 @@ using System.Collections.Concurrent;
 
 namespace Main
 {
+    /// Developed by Giovanni Lenguito
+    /// University: Staffordshire University
+    /// Student ID: L010516C
     public class Folder
     {
         public Task<ConcurrentQueue<Order>> getFilesTask;
