@@ -21,7 +21,6 @@ C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.exe
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.pdb
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.exe
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.pdb
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\nunit.framework.xml
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Manager.csprojResolveAssemblyReference.cache
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\About.baml
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Report.baml
@@ -56,3 +55,8 @@ D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.application
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.TrustInfo.xml
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.exe.manifest
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.application
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.exe.manifest
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.application
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.TrustInfo.xml
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.exe.manifest
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.application
