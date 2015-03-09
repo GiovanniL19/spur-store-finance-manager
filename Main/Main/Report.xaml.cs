@@ -32,10 +32,22 @@ namespace Main
         public MainWindow()
         {
             InitializeComponent();
+            if (Properties.Settings.Default.path != "")
+            {
+                loadPathBtn.Visibility = Visibility.Visible;
+            }
             if (Properties.Settings.Default.welcome == true)
             {
                 Welcome welcomeScreen = new Welcome();
                 welcomeScreen.Show();
+            }
+            if (Properties.Settings.Default.parallel == true)
+            {
+                typeOfEx.Content = "Parallel";
+            }
+            else
+            {
+                typeOfEx.Content = "Not Parallel";
             }
         }
 
@@ -115,35 +127,35 @@ namespace Main
             }
         }
 
-        public void selectFolder()
+        public void selectFolder(string path)
         {
             //Select a folder to read from
+            status.Content = "Loading...";
+            supplierList.Items.RemoveAt(0);
+            supplierTypeList.Items.RemoveAt(0);
 
-            System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            folder = new Folder();
 
-            if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                status.Content = "Loading...";
-                supplierList.Items.RemoveAt(0);
-                supplierTypeList.Items.RemoveAt(0);
+            sW.Start(); //start stopwatch
 
-                folder = new Folder();
+            //Send selected folder path to folder class
+            folder.getFiles(path);
 
-                sW.Start(); //start stopwatch
-
-                //Send selected folder path to folder class
-                folder.getFiles(folderDialog.SelectedPath);
-
-                //Start the watchReport to wait for task to complete
-                Task watcherTask = new Task(this.GUI_Update);
-                watcherTask.Start();
-            }
+            //Start the watchReport to wait for task to complete
+            Task watcherTask = new Task(this.GUI_Update);
+            watcherTask.Start();
+            
         }
 
         private void selectFolderBtn_Click(object sender, RoutedEventArgs e)
         {
             //go to selectFolder Method
-            selectFolder();
+            System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+
+            if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                selectFolder(folderDialog.SelectedPath);
+            }
         }
 
         private void GUI_Update()
@@ -158,18 +170,34 @@ namespace Main
             HashSet<string> suppliers = new HashSet<string>();
             HashSet<string> types = new HashSet<string>();
 
-
-            Parallel.For (0, result.Count(), i =>
+            if(Properties.Settings.Default.parallel == true)
             {
-                if (result[i].Supplier != null)
+                Parallel.For (0, result.Count(), i =>
                 {
-                    suppliers.Add(result[i].Supplier);
-                }
-                if (result[i].Type != null)
+                    if (result[i].Supplier != null)
+                    {
+                        suppliers.Add(result[i].Supplier);
+                    }
+                    if (result[i].Type != null)
+                    {
+                        types.Add(result[i].Type);
+                    }
+                });
+            }
+            else
+            {
+                for (int i = 0; i < result.Count(); i++)
                 {
-                    types.Add(result[i].Type);
+                    if (result[i].Supplier != null)
+                    {
+                        suppliers.Add(result[i].Supplier);
+                    }
+                    if (result[i].Type != null)
+                    {
+                        types.Add(result[i].Type);
+                    }
                 }
-            });
+            }
 
             //Prints data to user
             Dispatcher.Invoke(new Action(() =>{
@@ -210,6 +238,7 @@ namespace Main
                 sW.Stop();
                 status.Content = "Complete";
                 timeTaken.Content = sW.Elapsed;
+                sW.Reset();
             }));
            
         }
@@ -221,22 +250,13 @@ namespace Main
 
         private void settingsBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Settings feature currently unavailable", "Settings", MessageBoxButton.OK, MessageBoxImage.Stop);
+            Settings settings = new Settings();
+            settings.Show();
         }
 
         private void exitBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        private void saveBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Save();
-        }
-        
-        private void Save()
-        {
-            MessageBox.Show("Save feature currently unavailable", "Save", MessageBoxButton.OK, MessageBoxImage.Stop);
         }
 
         private void weeks_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -336,6 +356,11 @@ namespace Main
         {
             Welcome help = new Welcome();
             help.Show();
+        }
+
+        private void loadPath_Click(object sender, RoutedEventArgs e)
+        {
+            selectFolder(Properties.Settings.Default.path);
         }
     }
 }

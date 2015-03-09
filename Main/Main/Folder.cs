@@ -24,40 +24,81 @@ namespace Main
             {
                 string[] files = Directory.GetFiles(SelectedPath);
 
-                Parallel.ForEach(files, file =>
+                if (Properties.Settings.Default.parallel == true)
                 {
-                    if (Path.GetExtension(file) == ".csv")
+
+                    Parallel.ForEach(files, file =>
                     {
-                        try
+                        if (Path.GetExtension(file) == ".csv")
                         {
-                            List<string[]> csv = ParseFile.parseCSVFile(file);
-
-                            file = Path.GetFileName(file);
-                            
-                            String[] splitItem = file.Split('.')[0].Split('_');
-
-                            foreach (var line in csv)
+                            try
                             {
-                                Order order = new Order();
+                                List<string[]> csv = ParseFile.parseCSVFile(file);
 
-                                order.Store = splitItem[0];
-                                order.Supplier = line[0];
-                                order.Type = line[1];
+                                file = Path.GetFileName(file);
 
-                                order.Cost = Convert.ToDouble(line[2]);
-                                order.Week = Convert.ToInt32(splitItem[1]);
-                                order.year = Convert.ToInt32(splitItem[2]);
+                                String[] splitItem = file.Split('.')[0].Split('_');
 
-                                DataFile.Enqueue(order);
+                                foreach (var line in csv)
+                                {
+                                    Order order = new Order();
+
+                                    order.Store = splitItem[0];
+                                    order.Supplier = line[0];
+                                    order.Type = line[1];
+
+                                    order.Cost = Convert.ToDouble(line[2]);
+                                    order.Week = Convert.ToInt32(splitItem[1]);
+                                    order.year = Convert.ToInt32(splitItem[2]);
+
+                                    DataFile.Enqueue(order);
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine(e);
                             }
                         }
-                        catch (Exception e)
+                    });
+                }
+                else
+                {
+                    foreach(string file in files)
+                    {
+                        string fileInUse = file;
+
+                        if (Path.GetExtension(file) == ".csv")
                         {
-                            Console.WriteLine(e);
+                            try
+                            {
+                                List<string[]> csv = ParseFile.parseCSVFile(file);
+
+                                fileInUse = Path.GetFileName(file);
+
+                                String[] splitItem = fileInUse.Split('.')[0].Split('_');
+
+                                foreach (var line in csv)
+                                {
+                                    Order order = new Order();
+
+                                    order.Store = splitItem[0];
+                                    order.Supplier = line[0];
+                                    order.Type = line[1];
+
+                                    order.Cost = Convert.ToDouble(line[2]);
+                                    order.Week = Convert.ToInt32(splitItem[1]);
+                                    order.year = Convert.ToInt32(splitItem[2]);
+
+                                    DataFile.Enqueue(order);
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine(e);
+                            }
                         }
                     }
-
-                });
+                }
 
                 return DataFile;
             });
