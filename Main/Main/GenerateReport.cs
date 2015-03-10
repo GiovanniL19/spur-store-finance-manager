@@ -33,7 +33,7 @@ namespace Main
                         {
                             weekTotal += Result[i].Cost;
                         }
-                        if (year == Convert.ToString(Result[i].year) && store == Convert.ToString(Result[i].Store))
+                        if (year == Convert.ToString(Result[i].Year) && store == Convert.ToString(Result[i].Store))
                         {
                             yearTotal += Result[i].Cost;
                         }
@@ -45,7 +45,7 @@ namespace Main
                         {
                             storeTotal += Result[i].Cost;
                         }
-                        if (Result[i].Week == weeksSelection && Result[i].Store == store && year == Convert.ToString(Result[i].year) && Result[i].Supplier == supplier && Result[i].Type == type)
+                        if (Result[i].Week == weeksSelection && Result[i].Store == store && year == Convert.ToString(Result[i].Year) && Result[i].Supplier == supplier && Result[i].Type == type)
                         {
                             Report reportObj = new Report();
 
@@ -53,13 +53,13 @@ namespace Main
                             reportObj.Cost = Result[i].Cost;
                             reportObj.Type = Result[i].Type;
                             reportObj.Week = Result[i].Week;
-                            reportObj.Year = Result[i].year;
+                            reportObj.Year = Result[i].Year;
 
                             selectedTotal += Result[i].Cost;
 
                             report.Enqueue(reportObj);
                         }
-                        else if (Result[i].Week != weeksSelection && Result[i].Store == store && year == Convert.ToString(Result[i].year) && Result[i].Supplier == supplier && Result[i].Type == type)
+                        else if (Result[i].Week != weeksSelection && Result[i].Store == store && year == Convert.ToString(Result[i].Year) && Result[i].Supplier == supplier && Result[i].Type == type)
                         {
                             Report reportObj = new Report();
 
@@ -67,13 +67,13 @@ namespace Main
                             reportObj.Cost = Result[i].Cost;
                             reportObj.Type = Result[i].Type;
                             reportObj.Week = Result[i].Week;
-                            reportObj.Year = Result[i].year;
+                            reportObj.Year = Result[i].Year;
 
                             selectedTotal += Result[i].Cost;
 
                             report.Enqueue(reportObj);
                         }
-                        else if (Result[i].Week == weeksSelection && Result[i].Store != store && year == Convert.ToString(Result[i].year) && Result[i].Supplier == supplier && Result[i].Type == type)
+                        else if (Result[i].Week == weeksSelection && Result[i].Store != store && year == Convert.ToString(Result[i].Year) && Result[i].Supplier == supplier && Result[i].Type == type)
                         {
                             Report reportObj = new Report();
 
@@ -81,13 +81,13 @@ namespace Main
                             reportObj.Cost = Result[i].Cost;
                             reportObj.Type = Result[i].Type;
                             reportObj.Week = Result[i].Week;
-                            reportObj.Year = Result[i].year;
+                            reportObj.Year = Result[i].Year;
 
                             selectedTotal += Result[i].Cost;
 
                             report.Enqueue(reportObj);
                         }
-                        else if (Result[i].Week == weeksSelection && Result[i].Store == store && year != Convert.ToString(Result[i].year) && Result[i].Supplier == supplier && Result[i].Type == type)
+                        else if (Result[i].Week == weeksSelection && Result[i].Store == store && year != Convert.ToString(Result[i].Year) && Result[i].Supplier == supplier && Result[i].Type == type)
                         {
                             Report reportObj = new Report();
 
@@ -95,13 +95,13 @@ namespace Main
                             reportObj.Cost = Result[i].Cost;
                             reportObj.Type = Result[i].Type;
                             reportObj.Week = Result[i].Week;
-                            reportObj.Year = Result[i].year;
+                            reportObj.Year = Result[i].Year;
 
                             selectedTotal += Result[i].Cost;
 
                             report.Enqueue(reportObj);
                         }
-                        else if (Result[i].Week == weeksSelection && Result[i].Store == store && year == Convert.ToString(Result[i].year) && Result[i].Supplier != supplier && Result[i].Type == type)
+                        else if (Result[i].Week == weeksSelection && Result[i].Store == store && year == Convert.ToString(Result[i].Year) && Result[i].Supplier != supplier && Result[i].Type == type)
                         {
                             Report reportObj = new Report();
 
@@ -109,13 +109,13 @@ namespace Main
                             reportObj.Cost = Result[i].Cost;
                             reportObj.Type = Result[i].Type;
                             reportObj.Week = Result[i].Week;
-                            reportObj.Year = Result[i].year;
+                            reportObj.Year = Result[i].Year;
 
                             selectedTotal += Result[i].Cost;
 
                             report.Enqueue(reportObj);
                         }
-                        else if (Result[i].Week == weeksSelection && Result[i].Store == store && year == Convert.ToString(Result[i].year) && Result[i].Supplier == supplier && Result[i].Type != type)
+                        else if (Result[i].Week == weeksSelection && Result[i].Store == store && year == Convert.ToString(Result[i].Year) && Result[i].Supplier == supplier && Result[i].Type != type)
                         {
                             Report reportObj = new Report();
 
@@ -123,7 +123,7 @@ namespace Main
                             reportObj.Cost = Result[i].Cost;
                             reportObj.Type = Result[i].Type;
                             reportObj.Week = Result[i].Week;
-                            reportObj.Year = Result[i].year;
+                            reportObj.Year = Result[i].Year;
 
                             selectedTotal += Result[i].Cost;
 

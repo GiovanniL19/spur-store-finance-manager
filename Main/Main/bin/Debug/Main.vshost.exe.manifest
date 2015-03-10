@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Main.exe" size="821248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Main.exe" size="821760">
       <assemblyIdentity name="Main" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>33YF5r86NBUDTz6SQQTbM976dISQoTvvYRl/VIEVrIs=</dsig:DigestValue>
+        <dsig:DigestValue>qTDRrQ7J+3VWbMP0b4DSsg0TkEBHIHJ/IMZzcO3tNAo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -63,13 +63,13 @@
       <dsig:DigestValue>/mH7UYWr+W9xx4kE37EUoiFC/JdYTVOFOpM0YAtinsg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Main.exe.config" size="1134">
+  <file name="Main.exe.config" size="1133">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>SH2OqjeA5orLFzTIVNKhwMAnWFS1ba5Iwf6kcozfYEM=</dsig:DigestValue>
+      <dsig:DigestValue>EHUprtj9b2vxb1oPl+3VBm3Lyn0Mes5sEvPqQXJGckk=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

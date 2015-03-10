@@ -162,44 +162,32 @@ namespace Main
         {
             //Task will wait until the files have been parsed
             folder.getFilesTask.Wait();
-            
-            //The parrsed data object will be stored in a new list
+            Console.WriteLine("Complete Parse");
+
+            Console.WriteLine("Start Move to List");
+            //The parsed data object will be stored in a new list
             result = new List<Order>(folder.getFilesTask.Result);
 
+            Console.WriteLine("End Move to List");
             //Hashset are used to remove duplicates
+            Console.WriteLine("Start Hashset");
             HashSet<string> suppliers = new HashSet<string>();
             HashSet<string> types = new HashSet<string>();
 
-            if(Properties.Settings.Default.parallel == true)
+            for (int i = 0; i < result.Count(); i++)
             {
-                Parallel.For (0, result.Count(), i =>
+                if (result[i].Supplier != null)
                 {
-                    if (result[i].Supplier != null)
-                    {
-                        suppliers.Add(result[i].Supplier);
-                    }
-                    if (result[i].Type != null)
-                    {
-                        types.Add(result[i].Type);
-                    }
-                });
-            }
-            else
-            {
-                for (int i = 0; i < result.Count(); i++)
-                {
-                    if (result[i].Supplier != null)
-                    {
-                        suppliers.Add(result[i].Supplier);
-                    }
-                    if (result[i].Type != null)
-                    {
-                        types.Add(result[i].Type);
-                    }
+                    suppliers.Add(result[i].Supplier);
                 }
+                if (result[i].Type != null)
+                {
+                    types.Add(result[i].Type);
+                }    
             }
-
+            Console.WriteLine("End Hashset");
             //Prints data to user
+            Console.WriteLine("Print Data");
             Dispatcher.Invoke(new Action(() =>{
                 itemsParsedCount.Content = result.Count();
                 reportGrid.ItemsSource = result;

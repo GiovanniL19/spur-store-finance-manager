@@ -22,7 +22,6 @@ namespace Main
                 using (StreamReader readFile = new StreamReader(path))
                 {
                     string line;
-                    
                     while ((line = readFile.ReadLine()) != null)
                     {
                         output.Add(line.Split(','));

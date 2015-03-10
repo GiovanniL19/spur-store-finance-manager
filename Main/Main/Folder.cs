@@ -26,7 +26,6 @@ namespace Main
 
                 if (Properties.Settings.Default.parallel == true)
                 {
-
                     Parallel.ForEach(files, file =>
                     {
                         if (Path.GetExtension(file) == ".csv")
@@ -49,7 +48,7 @@ namespace Main
 
                                     order.Cost = Convert.ToDouble(line[2]);
                                     order.Week = Convert.ToInt32(splitItem[1]);
-                                    order.year = Convert.ToInt32(splitItem[2]);
+                                    order.Year = Convert.ToInt32(splitItem[2]);
 
                                     DataFile.Enqueue(order);
                                 }
@@ -87,7 +86,7 @@ namespace Main
 
                                     order.Cost = Convert.ToDouble(line[2]);
                                     order.Week = Convert.ToInt32(splitItem[1]);
-                                    order.year = Convert.ToInt32(splitItem[2]);
+                                    order.Year = Convert.ToInt32(splitItem[2]);
 
                                     DataFile.Enqueue(order);
                                 }

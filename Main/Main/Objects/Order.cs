@@ -15,6 +15,6 @@ namespace Main
         public Double Cost { get; set; }
 
         public int Week { get; set; }
-        public int year { get; set; }
+        public int Year { get; set; }
     }
 }

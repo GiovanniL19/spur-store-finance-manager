@@ -7,21 +7,42 @@
             <RowDefinition Height="37*"/>
         </Grid.RowDefinitions>
 
-        <DataGrid x:Name="reportGrid" Margin="482,103,227,29" Background="White" BorderBrush="#FFC7C7C7" SelectionMode="Extended" Foreground="#FF464646" BorderThickness="0" HorizontalGridLinesBrush="#FFC3C3C3" VerticalGridLinesBrush="#FFC3C3C3" GridLinesVisibility="Vertical" HeadersVisibility="Column" CanUserReorderColumns="False" CanUserSortColumns="False" IsReadOnly="True" >
+        <DataGrid x:Name="reportGrid" Margin="482,103,227,29" Background="White" BorderBrush="#FFC7C7C7" SelectionMode="Extended" Foreground="#FF464646" BorderThickness="0" HorizontalGridLinesBrush="#FFC3C3C3" VerticalGridLinesBrush="#FFC3C3C3" GridLinesVisibility="Horizontal" HeadersVisibility="Column" CanUserReorderColumns="False" CanUserSortColumns="False" IsReadOnly="True" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" AutoGenerateColumns="False">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="White"/>
-                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="Foreground" Value="Gray" />
+                    <Setter Property="Padding" Value="0,0,20,0"/>
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
                 </Style>
             </DataGrid.ColumnHeaderStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Supplier" Binding="{Binding Supplier}"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="Store" Binding="{Binding Store}"/>
+                <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>
+                <DataGridTextColumn Header="Week" Binding="{Binding Week}"/>
+                <DataGridTextColumn Header="Year" Binding="{Binding Year}"/>
+            </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="reportGridGen" Margin="183,103,0,29" Background="White" BorderBrush="#FF787878" SelectionMode="Extended" Foreground="#FF464646" BorderThickness="0" HorizontalGridLinesBrush="#FFC3C3C3" VerticalGridLinesBrush="#FFC3C3C3" GridLinesVisibility="Vertical" HeadersVisibility="Column" HorizontalAlignment="Left" Width="294" CanUserReorderColumns="False" CanUserSortColumns="False" IsReadOnly="True">
+        <DataGrid x:Name="reportGridGen" Margin="188,103,0,29" Background="White" BorderBrush="#FF787878" SelectionMode="Extended" Foreground="#FF464646" BorderThickness="0" HorizontalGridLinesBrush="#FFC3C3C3" VerticalGridLinesBrush="#FFC3C3C3" GridLinesVisibility="Vertical" HeadersVisibility="Column" CanUserReorderColumns="False" CanUserSortColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Width="289" AutoGenerateColumns="False">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="White"/>
-                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="Foreground" Value="Gray" />
+                    <Setter Property="Padding" Value="0,0,20,0"/>
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
                 </Style>
             </DataGrid.ColumnHeaderStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Supplier" Binding="{Binding Supplier}"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>
+                <DataGridTextColumn Header="Week" Binding="{Binding Week}"/>
+                <DataGridTextColumn Header="Year" Binding="{Binding Year}"/>
+            </DataGrid.Columns>
         </DataGrid>
 
         <DockPanel HorizontalAlignment="Left" LastChildFill="False" Margin="0,98,0,24" Width="183" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="#FFF0F0F0">
