@@ -17,7 +17,12 @@ namespace Main
         public double yearTotal     = 0;
         public double total         = 0;
         public double storeTotal    = 0;
-
+        public double allStoresCWeek= 0;
+        public double sTAll         = 0;
+        public double sTWeek        = 0;
+        public double sTStore       = 0;
+        public double sTStoreWeek   = 0;
+        public double selectS       = 0;
 
         public void GenerateTheReport(int weeksSelection, List<Order> Result, string store, string year, string supplier, string type)
         {
@@ -33,6 +38,10 @@ namespace Main
                         {
                             weekTotal += Result[i].Cost;
                         }
+                        if (Result[i].Week == weeksSelection)
+                        {
+                            allStoresCWeek += Result[i].Cost;
+                        }
                         if (year == Convert.ToString(Result[i].Year) && store == Convert.ToString(Result[i].Store))
                         {
                             yearTotal += Result[i].Cost;
@@ -41,10 +50,27 @@ namespace Main
                         {
                             storeTotal += Result[i].Cost;
                         }
-                        if (supplier == Convert.ToString(Result[i].Supplier))
+                        if (type == Convert.ToString(Result[i].Type))
                         {
-                            storeTotal += Result[i].Cost;
+                            sTAll += Result[i].Cost;
                         }
+                        if (type == Convert.ToString(Result[i].Type) && weeksSelection == Result[i].Week)
+                        {
+                            sTWeek += Result[i].Cost;
+                        }
+                        if (type == Convert.ToString(Result[i].Type) && store == Result[i].Store)
+                        {
+                            sTStore += Result[i].Cost;
+                        }
+                        if (type == Convert.ToString(Result[i].Type) && store == Result[i].Store && weeksSelection == Result[i].Week)
+                        {
+                            sTStoreWeek += Result[i].Cost;
+                        }
+                        if (supplier == Result[i].Supplier)
+                        {
+                            selectS += Result[i].Cost;
+                        }
+
                         if (Result[i].Week == weeksSelection && Result[i].Store == store && year == Convert.ToString(Result[i].Year) && Result[i].Supplier == supplier && Result[i].Type == type)
                         {
                             Report reportObj = new Report();
@@ -133,6 +159,7 @@ namespace Main
 
                 }
                 catch (Exception e) { Console.WriteLine(e); }
+                
                 return report;
             });
         }
@@ -157,13 +184,43 @@ namespace Main
         {
             return string.Format("{0:C}", storeTotal);
         }
+        public string getAllStoresCWeek()
+        {
+            return string.Format("{0:C}", allStoresCWeek);
+        }
+        public string getSTAll()
+        {
+            return string.Format("{0:C}", sTAll);
+        }
+        public string getSTWeek()
+        {
+            return string.Format("{0:C}", sTWeek);
+        }
+        public string getSTStore()
+        {
+            return string.Format("{0:C}", sTStore);
+        }
+        public string getSTStoreWeek()
+        {
+            return string.Format("{0:C}", sTStoreWeek);
+        }
+        public string getSelectedSupplier()
+        {
+            return string.Format("{0:C}", selectS);
+        }
         public void resetTotal()
         {
-            this.selectedTotal = 0;
-            this.total = 0;
-            this.yearTotal = 0;
-            this.weekTotal = 0;
-            this.storeTotal = 0;
+            this.selectedTotal  = 0;
+            this.total          = 0;
+            this.yearTotal      = 0;
+            this.weekTotal      = 0;
+            this.storeTotal     = 0;
+            this.allStoresCWeek = 0;
+            this.sTAll          = 0;
+            this.sTWeek         = 0;
+            this.sTStore        = 0;
+            this.sTStoreWeek    = 0;
+            this.selectS        = 0;
         }
     }
 }

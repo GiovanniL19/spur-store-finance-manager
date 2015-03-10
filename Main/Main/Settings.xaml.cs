@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +42,7 @@ namespace Main
                 parallelCheckBtn.IsChecked = false;
             }
             folderPathText.Text = Properties.Settings.Default.path;
+            storesPathText.Text = Properties.Settings.Default.storesPath;
         }
 
         private void selectPath_Click(object sender, RoutedEventArgs e)
@@ -80,11 +83,28 @@ namespace Main
         private void reset_Click(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.path = null;
+            Properties.Settings.Default.storesPath = null;
+
             Properties.Settings.Default.welcome = true;
             Properties.Settings.Default.parallel = true;
             Properties.Settings.Default.Save();
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown(); 
+        }
+
+        private void selectStorePath_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog storeFileDialog = new OpenFileDialog();
+
+            if (storeFileDialog.ShowDialog() == true)
+            {
+                
+                if (System.IO.Path.GetFileName(storeFileDialog.FileName) == "StoreCodes.csv")
+                {
+                    Properties.Settings.Default.storesPath = storeFileDialog.FileName;
+                    storesPathText.Text = storeFileDialog.FileName;
+                }
+            }
         }
 
     }

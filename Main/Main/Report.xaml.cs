@@ -49,6 +49,10 @@ namespace Main
             {
                 typeOfEx.Content = "Not Parallel";
             }
+            if (Properties.Settings.Default.storesPath != "")
+            {
+                selectStore(Properties.Settings.Default.storesPath);
+            }
         }
 
 
@@ -79,6 +83,8 @@ namespace Main
             else
             {
                 //Generate Report
+                loader.Visibility = Visibility.Visible;
+                status.Content = "Generating...";
                 reportGridGen.ClearValue(ItemsControl.ItemsSourceProperty);
                 reportGridGen.Items.Clear();
                 reportGridGen.Items.Refresh();
@@ -109,7 +115,7 @@ namespace Main
             {
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    //prints report to labels and data grid
+                    //Prints report to labels and data grid
                     numberOfReport.Content = report.Count().ToString();
                     
                     gTotal.Content = gen.getgTotal();
@@ -117,7 +123,15 @@ namespace Main
                     yearTotal.Content = gen.getYearTotal();
                     storeTotal.Content = gen.getStoreTotal();
                     selectedTotal.Content = gen.getSelectedTotal();
-                    
+                    allStoresCWeek.Content = gen.getAllStoresCWeek();
+                    sTAll.Content = gen.getSTAll();
+                    sTWeek.Content = gen.getSTWeek();
+                    sTStore.Content = gen.getSTStore();
+                    sTStoreWeek.Content = gen.getSTStoreWeek();
+                    selectedSupplier.Content = gen.getSelectedSupplier();
+
+                    loader.Visibility = Visibility.Hidden;
+                    status.Content = "Done";
                     reportGridGen.ItemsSource = report;
                 }));
             }
@@ -131,6 +145,7 @@ namespace Main
         {
             //Select a folder to read from
             status.Content = "Loading...";
+            loader.Visibility = Visibility.Visible;
             supplierList.Items.RemoveAt(0);
             supplierTypeList.Items.RemoveAt(0);
 
@@ -162,15 +177,11 @@ namespace Main
         {
             //Task will wait until the files have been parsed
             folder.getFilesTask.Wait();
-            Console.WriteLine("Complete Parse");
 
-            Console.WriteLine("Start Move to List");
             //The parsed data object will be stored in a new list
             result = new List<Order>(folder.getFilesTask.Result);
 
-            Console.WriteLine("End Move to List");
             //Hashset are used to remove duplicates
-            Console.WriteLine("Start Hashset");
             HashSet<string> suppliers = new HashSet<string>();
             HashSet<string> types = new HashSet<string>();
 
@@ -187,7 +198,6 @@ namespace Main
             }
             Console.WriteLine("End Hashset");
             //Prints data to user
-            Console.WriteLine("Print Data");
             Dispatcher.Invoke(new Action(() =>{
                 itemsParsedCount.Content = result.Count();
                 reportGrid.ItemsSource = result;
@@ -224,7 +234,8 @@ namespace Main
 
                 //End timer and set status to complete
                 sW.Stop();
-                status.Content = "Complete";
+                status.Content = "Done";
+                loader.Visibility = Visibility.Hidden;
                 timeTaken.Content = sW.Elapsed;
                 sW.Reset();
             }));
@@ -257,21 +268,15 @@ namespace Main
             try{store = (storesList.SelectedItem as CBItem).Value.ToString();}catch(Exception){}
         }
 
-        public void selectStore()
+        public void selectStore(string path)
         {
-            //Select the store csv
-            OpenFileDialog storeFileDialog = new OpenFileDialog();
+            StreamReader readFile = new StreamReader(path);
+            string line;
 
-            if (storeFileDialog.ShowDialog() == true)
-            {
-                StreamReader readFile = new StreamReader(storeFileDialog.FileName);
-
-                storesList.Items.RemoveAt(0);
-                string line;
-
+            storesList.Items.Clear();
                 try
                 {
-                    if (Path.GetFileName(storeFileDialog.FileName) == "StoreCodes.csv")
+                    if (Path.GetFileName(path) == "StoreCodes.csv")
                     {
                         CBItem AllStores = new CBItem();
                         AllStores.Content = "Select a Store";
@@ -301,11 +306,17 @@ namespace Main
                     }
                 }
                 catch (Exception) { Dispatcher.Invoke(new Action(() => { MessageBox.Show("Error loading stores"); })); }
-            } 
+                    
         }
         private void loadStores_Click(object sender, RoutedEventArgs e)
         {
-            selectStore();
+            //Select the store csv
+            OpenFileDialog storeFileDialog = new OpenFileDialog();
+
+            if (storeFileDialog.ShowDialog() == true)
+            {
+                selectStore(storeFileDialog.FileName);        
+            } 
         }
 
         private void CalculatorBtn_Click(object sender, RoutedEventArgs e)
