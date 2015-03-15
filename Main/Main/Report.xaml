@@ -48,7 +48,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <DockPanel HorizontalAlignment="Left" LastChildFill="False" Margin="0,89,0,24" Width="183" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="#FFF0F0F0">
+        <DockPanel HorizontalAlignment="Left" LastChildFill="False" Margin="0,98,0,24" Width="183" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="#FFF0F0F0">
             <DockPanel.Effect>
                 <DropShadowEffect Opacity="0.2"/>
             </DockPanel.Effect>
@@ -141,6 +141,9 @@
 
         </DockPanel>
         <DockPanel Height="67" LastChildFill="False" Margin="0,31,227,0" VerticalAlignment="Top" Background="#FFF0F0F0">
+            <DockPanel.Effect>
+                <DropShadowEffect Opacity="0.2"/>
+            </DockPanel.Effect>
             <Button Grid.Row="0" Margin="7,0,0,0" VerticalAlignment="Center" Height="50" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Click="selectFolderBtn_Click" HorizontalAlignment="Center" Width="65" BorderThickness="0" ToolTip="Select Folder">
                 <StackPanel>
                     <Image x:Name="folderIcon" Height="30" Width="30" Source="Icons/addFolder.png" />

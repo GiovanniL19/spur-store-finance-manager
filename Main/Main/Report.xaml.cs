@@ -83,7 +83,6 @@ namespace Main
             else
             {
                 //Generate Report
-                loader.Visibility = Visibility.Visible;
                 status.Content = "Generating...";
                 reportGridGen.ClearValue(ItemsControl.ItemsSourceProperty);
                 reportGridGen.Items.Clear();
@@ -130,7 +129,6 @@ namespace Main
                     sTStoreWeek.Content = gen.getSTStoreWeek();
                     selectedSupplier.Content = gen.getSelectedSupplier();
 
-                    loader.Visibility = Visibility.Hidden;
                     status.Content = "Done";
                     reportGridGen.ItemsSource = report;
                 }));
@@ -145,7 +143,6 @@ namespace Main
         {
             //Select a folder to read from
             status.Content = "Loading...";
-            loader.Visibility = Visibility.Visible;
             supplierList.Items.RemoveAt(0);
             supplierTypeList.Items.RemoveAt(0);
 
@@ -235,7 +232,6 @@ namespace Main
                 //End timer and set status to complete
                 sW.Stop();
                 status.Content = "Done";
-                loader.Visibility = Visibility.Hidden;
                 timeTaken.Content = sW.Elapsed;
                 sW.Reset();
             }));
