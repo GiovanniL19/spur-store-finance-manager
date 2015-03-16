@@ -210,17 +210,17 @@ namespace Main
         }
         public void resetTotal()
         {
-            this.selectedTotal  = 0;
-            this.total          = 0;
-            this.yearTotal      = 0;
-            this.weekTotal      = 0;
-            this.storeTotal     = 0;
-            this.allStoresCWeek = 0;
-            this.sTAll          = 0;
-            this.sTWeek         = 0;
-            this.sTStore        = 0;
-            this.sTStoreWeek    = 0;
-            this.selectS        = 0;
+            selectedTotal  = 0;
+            total          = 0;
+            yearTotal      = 0;
+            weekTotal      = 0;
+            storeTotal     = 0;
+            allStoresCWeek = 0;
+            sTAll          = 0;
+            sTWeek         = 0;
+            sTStore        = 0;
+            sTStoreWeek    = 0;
+            selectS        = 0;
         }
     }
 }

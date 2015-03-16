@@ -64,6 +64,7 @@ namespace Main
         public List<Report> report;
 
         public Stopwatch sW = new Stopwatch();
+        public Stopwatch sWReport = new Stopwatch();
 
         //Filters
         public int weeksSelection = 0;
@@ -94,6 +95,7 @@ namespace Main
                     report = null;
                 }
 
+                sWReport.Start();
                 //Send data to GenerateReport
                 gen.GenerateTheReport(weeksSelection, result.ToList(), store, year, supplier, type);
 
@@ -131,6 +133,10 @@ namespace Main
 
                     status.Content = "Done";
                     reportGridGen.ItemsSource = report;
+
+                    sWReport.Stop();
+                    timeTakenGen.Content = sWReport.Elapsed;
+                    sWReport.Reset();
                 }));
             }
             else
