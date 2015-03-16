@@ -53,8 +53,14 @@
                 <DropShadowEffect Opacity="0.2"/>
             </DockPanel.Effect>
             <Image HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="27" Source="Icons/filter.png" DockPanel.Dock="Top" Margin="15,15,15,10" ToolTip="Filter"/>
+            <Label Content="Year:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="10" DockPanel.Dock="Top" Margin="15,0"/>
+            <ComboBox x:Name="yearsList" VerticalAlignment="Top" DockPanel.Dock="Top" SelectionChanged="yearsList_SelectionChanged"  Margin="15,0,63,0" BorderBrush="{x:Null}">
+                <ComboBoxItem  IsSelected="True" Content="Select a Year"/>
+                <ComboBoxItem Content="2013" />
+                <ComboBoxItem  Content="2014"/>
+            </ComboBox>
             <Label Content="Number of Weeks:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" DockPanel.Dock="Top" Margin="15,0"/>
-            <ComboBox x:Name="weeks" VerticalAlignment="Top" DockPanel.Dock="Top" Padding="6,3,5,3" IsSynchronizedWithCurrentItem="True" SelectionChanged="weeks_SelectionChanged" SelectedValuePath="Content" Margin="15,0" BorderBrush="{x:Null}">
+            <ComboBox x:Name="weeks" VerticalAlignment="Top" DockPanel.Dock="Top" Padding="6,3,5,3" IsSynchronizedWithCurrentItem="True" SelectionChanged="weeks_SelectionChanged" SelectedValuePath="Content" Margin="15,0,63,0" BorderBrush="{x:Null}">
                 <ComboBoxItem IsSelected="True" Content="Select a Week"/>
                 <ComboBoxItem Content="1"/>
                 <ComboBoxItem Content="2"/>
@@ -113,12 +119,6 @@
 
                 <ComboBoxItem Content="51"/>
                 <ComboBoxItem Content="52"/>
-            </ComboBox>
-            <Label Content="Year:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="10" DockPanel.Dock="Top" Margin="15,0"/>
-            <ComboBox x:Name="yearsList" VerticalAlignment="Top" DockPanel.Dock="Top" SelectionChanged="yearsList_SelectionChanged"  Margin="15,0" BorderBrush="{x:Null}">
-                <ComboBoxItem  IsSelected="True" Content="Select a Year"/>
-                <ComboBoxItem Content="2013" />
-                <ComboBoxItem  Content="2014"/>
             </ComboBox>
             <Label Content="Store Location:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="10" DockPanel.Dock="Top" Margin="15,0"/>
             <ComboBox x:Name="storesList" SelectedValuePath="Content" VerticalAlignment="Top" DockPanel.Dock="Top" IsSynchronizedWithCurrentItem="True" SelectionChanged="storesList_SelectionChanged" Margin="15,0" BorderBrush="{x:Null}">

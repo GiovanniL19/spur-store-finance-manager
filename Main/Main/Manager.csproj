@@ -110,6 +110,7 @@
     <Compile Include="Command.cs" />
     <Compile Include="GenerateReport.cs" />
     <Compile Include="Objects\Report.cs" />
+    <Compile Include="Objects\Statistics.cs" />
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>

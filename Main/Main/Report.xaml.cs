@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using Main.Objects;
+using Microsoft.Win32;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace Main
     /// Student ID: L010516C
     public partial class MainWindow : Window
     {
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -64,7 +65,6 @@ namespace Main
         public List<Report> report;
 
         public Stopwatch sW = new Stopwatch();
-        public Stopwatch sWReport = new Stopwatch();
 
         //Filters
         public int weeksSelection = 0;
@@ -79,7 +79,7 @@ namespace Main
         {
             if (result == null)
             {
-                MessageBox.Show("Please Select a Folder", "Warning" , MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Please Select a Folder", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
@@ -88,14 +88,12 @@ namespace Main
                 reportGridGen.ClearValue(ItemsControl.ItemsSourceProperty);
                 reportGridGen.Items.Clear();
                 reportGridGen.Items.Refresh();
-                gen.resetTotal();
 
                 if (report != null)
                 {
                     report = null;
                 }
 
-                sWReport.Start();
                 //Send data to GenerateReport
                 gen.GenerateTheReport(weeksSelection, result.ToList(), store, year, supplier, type);
 
@@ -117,26 +115,25 @@ namespace Main
                 Dispatcher.Invoke(new Action(() =>
                 {
                     //Prints report to labels and data grid
-                    numberOfReport.Content = report.Count().ToString();
-                    
-                    gTotal.Content = gen.getgTotal();
-                    weekTotal.Content = gen.getWeekTotal();
-                    yearTotal.Content = gen.getYearTotal();
-                    storeTotal.Content = gen.getStoreTotal();
-                    selectedTotal.Content = gen.getSelectedTotal();
-                    allStoresCWeek.Content = gen.getAllStoresCWeek();
-                    sTAll.Content = gen.getSTAll();
-                    sTWeek.Content = gen.getSTWeek();
-                    sTStore.Content = gen.getSTStore();
-                    sTStoreWeek.Content = gen.getSTStoreWeek();
-                    selectedSupplier.Content = gen.getSelectedSupplier();
+                    numberOfReport.Content = report.Count();
 
+                    Statistics stats = gen.getStats();
+
+                    gTotal.Content = string.Format("{0:C}", stats.grandTotal);
+                    weekTotal.Content = string.Format("{0:C}", stats.weekTotal);
+                    yearTotal.Content = string.Format("{0:C}", stats.yearTotal);
+                    storeTotal.Content = string.Format("{0:C}", stats.storeTotal);
+                    selectedTotal.Content = string.Format("{0:C}", stats.selectedTotal);
+                    allStoresCWeek.Content = string.Format("{0:C}", stats.allStoresWeek);
+                    sTAll.Content = string.Format("{0:C}", stats.supplyTAll);
+                    sTWeek.Content = string.Format("{0:C}", stats.supplyTWeek);
+                    sTStore.Content = string.Format("{0:C}", stats.supplyTStore);
+                    sTStoreWeek.Content = string.Format("{0:C}", stats.supplyTWeek);
+                    selectedSupplier.Content = string.Format("{0:C}", stats.supplierSTotal);
+
+                    stats = null;
                     status.Content = "Done";
                     reportGridGen.ItemsSource = report;
-
-                    sWReport.Stop();
-                    timeTakenGen.Content = sWReport.Elapsed;
-                    sWReport.Reset();
                 }));
             }
             else
@@ -162,7 +159,7 @@ namespace Main
             //Start the watchReport to wait for task to complete
             Task watcherTask = new Task(this.GUI_Update);
             watcherTask.Start();
-            
+
         }
 
         private void selectFolderBtn_Click(object sender, RoutedEventArgs e)
@@ -197,11 +194,12 @@ namespace Main
                 if (result[i].Type != null)
                 {
                     types.Add(result[i].Type);
-                }    
+                }
             }
             Console.WriteLine("End Hashset");
             //Prints data to user
-            Dispatcher.Invoke(new Action(() =>{
+            Dispatcher.Invoke(new Action(() =>
+            {
                 itemsParsedCount.Content = result.Count();
                 reportGrid.ItemsSource = result;
 
@@ -214,14 +212,14 @@ namespace Main
                 itemType.Content = "Select Supplier Type";
                 supplierTypeList.Items.Add(itemType);
                 supplierTypeList.SelectedItem = itemType;
-             
+
 
                 //Populates comboboxes
-                foreach(var supplierItem in suppliers)
+                foreach (var supplierItem in suppliers)
                 {
                     CBItem itemAdd = new CBItem();
                     itemAdd.Content = supplierItem;
-                
+
                     supplierList.Items.Add(itemAdd);
                 }
 
@@ -241,7 +239,7 @@ namespace Main
                 timeTaken.Content = sW.Elapsed;
                 sW.Reset();
             }));
-           
+
         }
 
         private void printDataBtn_Click(object sender, RoutedEventArgs e)
@@ -267,7 +265,8 @@ namespace Main
 
         private void storesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            try{store = (storesList.SelectedItem as CBItem).Value.ToString();}catch(Exception){}
+            try { store = (storesList.SelectedItem as CBItem).Value.ToString(); }
+            catch (Exception) { }
         }
 
         public void selectStore(string path)
@@ -276,39 +275,39 @@ namespace Main
             string line;
 
             storesList.Items.Clear();
-                try
+            try
+            {
+                if (Path.GetFileName(path) == "StoreCodes.csv")
                 {
-                    if (Path.GetFileName(path) == "StoreCodes.csv")
+                    CBItem AllStores = new CBItem();
+                    AllStores.Content = "Select a Store";
+
+                    storesList.Items.Add(AllStores);
+
+                    storesList.SelectedItem = AllStores;
+
+                    //reads the stores and populates combobox
+                    while ((line = readFile.ReadLine()) != null)
                     {
-                        CBItem AllStores = new CBItem();
-                        AllStores.Content = "Select a Store";
+                        String[] split = line.Split(',');
 
-                        storesList.Items.Add(AllStores);
+                        CBItem item = new CBItem();
+                        item.Value = split[0];
+                        item.Content = split[1];
 
-                        storesList.SelectedItem = AllStores;
-
-                        //reads the stores and populates combobox
-                        while ((line = readFile.ReadLine()) != null)
-                        {
-                            String[] split = line.Split(',');
-
-                            CBItem item = new CBItem();
-                            item.Value = split[0];
-                            item.Content = split[1];
-
-                            storesList.Items.Add(item);
-                        }
-                    }
-                    else
-                    {
-                        Dispatcher.Invoke(new Action(() =>
-                        {
-                            MessageBox.Show("Please select file named: StoreCodes.csv");
-                        }));
+                        storesList.Items.Add(item);
                     }
                 }
-                catch (Exception) { Dispatcher.Invoke(new Action(() => { MessageBox.Show("Error loading stores"); })); }
-                    
+                else
+                {
+                    Dispatcher.Invoke(new Action(() =>
+                    {
+                        MessageBox.Show("Please select file named: StoreCodes.csv");
+                    }));
+                }
+            }
+            catch (Exception) { Dispatcher.Invoke(new Action(() => { MessageBox.Show("Error loading stores"); })); }
+
         }
         private void loadStores_Click(object sender, RoutedEventArgs e)
         {
@@ -317,8 +316,8 @@ namespace Main
 
             if (storeFileDialog.ShowDialog() == true)
             {
-                selectStore(storeFileDialog.FileName);        
-            } 
+                selectStore(storeFileDialog.FileName);
+            }
         }
 
         private void CalculatorBtn_Click(object sender, RoutedEventArgs e)
@@ -329,7 +328,7 @@ namespace Main
 
         private void yearsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (((ComboBoxItem) yearsList.SelectedItem).Content != null)
+            if (((ComboBoxItem)yearsList.SelectedItem).Content != null)
             {
                 year = (yearsList.SelectedItem as ComboBoxItem).Content.ToString();
             }
