@@ -26,21 +26,7 @@ namespace Main
         {
             InitializeComponent();
         }
-        private void close_Click(object sender, RoutedEventArgs e)
-        {
-            if (welcomeCheck.IsChecked == false)
-            {
-                Properties.Settings.Default.welcome = false;
-                Properties.Settings.Default.Save();
-            }
-            else
-            {
-                Properties.Settings.Default.welcome = true;
-                Properties.Settings.Default.Save();
-            }
-            this.Close();
-        }
-
+        
         private void welcomeCheck_CheckedChanged(object sender, RoutedEventArgs e)
         {
             if (welcomeCheck.IsChecked == false)

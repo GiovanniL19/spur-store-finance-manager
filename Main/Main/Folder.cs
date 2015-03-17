@@ -26,7 +26,10 @@ namespace Main
 
                 if (Properties.Settings.Default.parallel == true)
                 {
-                    Parallel.ForEach(files, file =>
+                    ParallelOptions po = new ParallelOptions();
+                    po.MaxDegreeOfParallelism = 1; // uses only set core
+
+                    Parallel.ForEach(files, po, file =>
                     {
                         if (Path.GetExtension(file) == ".csv")
                         {

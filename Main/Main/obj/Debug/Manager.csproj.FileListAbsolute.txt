@@ -66,3 +66,11 @@ D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Settings.baml
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Settings.g.cs
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Graphs.baml
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Graphs.g.cs
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.Input.Toolkit.dll
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.Layout.Toolkit.dll
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\WPFToolkit.dll
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.Input.Toolkit.pdb
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.Layout.Toolkit.pdb
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\WPFToolkit.pdb

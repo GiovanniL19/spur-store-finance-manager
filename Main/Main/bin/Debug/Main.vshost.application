@@ -14,14 +14,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Main.exe.manifest" size="5233">
+    <dependentAssembly dependencyType="install" codebase="Main.exe.manifest" size="8128">
       <assemblyIdentity name="Main.exe" version="1.0.2.2" publicKeyToken="0000000000000000" language="en-GB" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>355U1j3SuX7UkT0DaMC6kgDR82BFAMtgsieg9bxu6Uk=</dsig:DigestValue>
+        <dsig:DigestValue>s0wPcIglkWy/8dmzxMjvp4HKWwdFwCPktMYrnX5hGcs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
