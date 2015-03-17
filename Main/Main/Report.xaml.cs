@@ -148,6 +148,7 @@ namespace Main
             status.Content = "Loading...";
             supplierList.Items.RemoveAt(0);
             supplierTypeList.Items.RemoveAt(0);
+            yearsList.Items.RemoveAt(0);
 
             folder = new Folder();
 
@@ -184,6 +185,7 @@ namespace Main
             //Hashset are used to remove duplicates
             HashSet<string> suppliers = new HashSet<string>();
             HashSet<string> types = new HashSet<string>();
+            HashSet<int> yearsHash = new HashSet<int>();
 
             for (int i = 0; i < result.Count(); i++)
             {
@@ -194,6 +196,10 @@ namespace Main
                 if (result[i].Type != null)
                 {
                     types.Add(result[i].Type);
+                }
+                if (result[i].Year.ToString() != null)
+                {
+                    yearsHash.Add(result[i].Year);
                 }
             }
             Console.WriteLine("End Hashset");
@@ -212,6 +218,11 @@ namespace Main
                 itemType.Content = "Select Supplier Type";
                 supplierTypeList.Items.Add(itemType);
                 supplierTypeList.SelectedItem = itemType;
+
+                CBItem yearItem = new CBItem();
+                yearItem.Content = "Select Year";
+                yearsList.Items.Add(yearItem);
+                yearsList.SelectedItem = yearItem;
 
 
                 //Populates comboboxes
@@ -232,7 +243,14 @@ namespace Main
                         supplierTypeList.Items.Add(itemAdd);
                     }
                 }
+                foreach (var yearFound in yearsHash)
+                {
+                    int y = yearFound;   
+                    CBItem itemAdd = new CBItem();
+                    itemAdd.Content = y.ToString();
 
+                    yearsList.Items.Add(itemAdd);
+                }
                 //End timer and set status to complete
                 sW.Stop();
                 status.Content = "Done";
@@ -328,10 +346,8 @@ namespace Main
 
         private void yearsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (((ComboBoxItem)yearsList.SelectedItem).Content != null)
-            {
-                year = (yearsList.SelectedItem as ComboBoxItem).Content.ToString();
-            }
+            try { year = yearsList.SelectedItem.ToString(); }
+            catch (Exception) { }
         }
 
         private void aboutBtn_Click(object sender, RoutedEventArgs e)
@@ -361,6 +377,19 @@ namespace Main
         private void loadPath_Click(object sender, RoutedEventArgs e)
         {
             selectFolder(Properties.Settings.Default.path);
+        }
+
+        private void graphBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (report != null)
+            {
+                Graphs graphs = new Graphs();
+                graphs.Show();
+            }
+            else
+            {
+                MessageBox.Show("You need to generate a report before you can view graphs");
+            }
         }
     }
 }

@@ -64,3 +64,5 @@ C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Settings.g.cs
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Manager.csprojResolveAssemblyReference.cache
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Settings.baml
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Settings.g.cs
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Graphs.baml
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Graphs.g.cs

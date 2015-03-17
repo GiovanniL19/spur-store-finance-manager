@@ -106,6 +106,9 @@
     <Compile Include="About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Graphs.xaml.cs">
+      <DependentUpon>Graphs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Objects\CBItem.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="GenerateReport.cs" />
@@ -118,6 +121,10 @@
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
     <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Graphs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,6 +228,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="loader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\statistics.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

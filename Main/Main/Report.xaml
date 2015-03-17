@@ -55,9 +55,7 @@
             <Image HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="27" Source="Icons/filter.png" DockPanel.Dock="Top" Margin="15,15,15,10" ToolTip="Filter"/>
             <Label Content="Year:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="10" DockPanel.Dock="Top" Margin="15,0"/>
             <ComboBox x:Name="yearsList" VerticalAlignment="Top" DockPanel.Dock="Top" SelectionChanged="yearsList_SelectionChanged"  Margin="15,0,63,0" BorderBrush="{x:Null}">
-                <ComboBoxItem  IsSelected="True" Content="Select a Year"/>
-                <ComboBoxItem Content="2013" />
-                <ComboBoxItem  Content="2014"/>
+                <ComboBoxItem IsSelected="True" Content="Not Loaded"/>
             </ComboBox>
             <Label Content="Number of Weeks:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" DockPanel.Dock="Top" Margin="15,0"/>
             <ComboBox x:Name="weeks" VerticalAlignment="Top" DockPanel.Dock="Top" Padding="6,3,5,3" IsSynchronizedWithCurrentItem="True" SelectionChanged="weeks_SelectionChanged" SelectedValuePath="Content" Margin="15,0,63,0" BorderBrush="{x:Null}">
@@ -160,6 +158,12 @@
                 <StackPanel>
                     <Image x:Name="binIcon1" Height="30" Width="30" Source="Icons/calculator.png" />
                     <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"><Run Text="Calculator"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button VerticalAlignment="Center" Height="50" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Click="graphBtn_Click" HorizontalAlignment="Center" Width="65" BorderThickness="0" ToolTip="Open Graphs" Margin="0,4.5">
+                <StackPanel>
+                    <Image x:Name="graph" Height="30" Width="30" Source="Icons/statistics.png" />
+                    <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"><Run Text="Graphs"/></TextBlock>
                 </StackPanel>
             </Button>
             <Button x:Name="loadPathBtn" VerticalAlignment="Center" Height="50" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Click="loadPath_Click" HorizontalAlignment="Center" Width="65" BorderThickness="0" ToolTip="Load" Margin="0,4.5" Visibility="Hidden">
