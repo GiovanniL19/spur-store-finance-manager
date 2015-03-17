@@ -57,7 +57,7 @@ namespace Main
         }
 
 
-        public Folder folder;
+        public Folder folder = new Folder();
         public GenerateReport gen = new GenerateReport();
         public Command command;
 
@@ -65,6 +65,7 @@ namespace Main
         public List<Report> report;
 
         public Stopwatch sW = new Stopwatch();
+        public Stopwatch sWGen = new Stopwatch();
 
         //Filters
         public int weeksSelection = 0;
@@ -84,7 +85,10 @@ namespace Main
             else
             {
                 //Generate Report
+                loading.Visibility = Visibility.Visible;
                 status.Content = "Generating...";
+                sWGen.Reset();
+                sWGen.Start();
                 reportGridGen.ClearValue(ItemsControl.ItemsSourceProperty);
                 reportGridGen.Items.Clear();
                 reportGridGen.Items.Refresh();
@@ -132,8 +136,11 @@ namespace Main
                     selectedSupplier.Content = string.Format("{0:C}", stats.supplierSTotal);
 
                     stats = null;
-                    status.Content = "Done";
                     reportGridGen.ItemsSource = report;
+                    status.Content = "Done";
+                    sWGen.Stop();
+                    loading.Visibility = Visibility.Hidden;
+                    timeTakenGen.Content = sWGen.Elapsed;
                 }));
             }
             else
@@ -145,12 +152,21 @@ namespace Main
         public void selectFolder(string path)
         {
             //Select a folder to read from
+            cancelBtn.Visibility = Visibility.Visible;
+            loading.Visibility = Visibility.Visible;
             status.Content = "Loading...";
-            supplierList.Items.RemoveAt(0);
-            supplierTypeList.Items.RemoveAt(0);
-            yearsList.Items.RemoveAt(0);
+            try
+            {
+                supplierList.Items.RemoveAt(0);
+                supplierTypeList.Items.RemoveAt(0);
+                yearsList.Items.RemoveAt(0);
 
-            folder = new Folder();
+                if (yearsList.Items != null)
+                {
+                    yearsList.Items.Clear();
+                }
+            }
+            catch (Exception) { }
 
             sW.Start(); //start stopwatch
 
@@ -254,8 +270,10 @@ namespace Main
                 //End timer and set status to complete
                 sW.Stop();
                 status.Content = "Done";
+                cancelBtn.Visibility = Visibility.Hidden;
                 timeTaken.Content = sW.Elapsed;
                 sW.Reset();
+                loading.Visibility = Visibility.Hidden;
             }));
 
         }
@@ -390,6 +408,12 @@ namespace Main
             {
                 MessageBox.Show("You need to generate a report before you can view graphs");
             }
+        }
+
+        private void cancelTasksBtn_Click(object sender, RoutedEventArgs e)
+        {
+            folder.cancel();
+            MessageBox.Show("Cancelling...");
         }
     }
 }

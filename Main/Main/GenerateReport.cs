@@ -146,6 +146,7 @@ namespace Main
 
                             report.Enqueue(reportObj);
                         }
+                        //var report = result.Where(o => o.Store == store && o.Supplier == supplier && o.Type == type && o.Week.ToString() == weeksSelection.ToString() && o.Year.ToString() == year.ToString());
                     }
 
                 }

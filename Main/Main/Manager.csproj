@@ -242,9 +242,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="loader.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\statistics.png" />
   </ItemGroup>
   <ItemGroup>

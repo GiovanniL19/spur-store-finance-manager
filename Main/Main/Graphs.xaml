@@ -4,11 +4,13 @@
         xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         Title="Graphs" Height="320.956" Width="523.897" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Height="292" VerticalAlignment="Top" HorizontalAlignment="Left" Width="518">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" 
-	VerticalScrollBarVisibility="Auto" Margin="0,-28,0,0">
-            <chartingToolkit:Chart Height="271" HorizontalAlignment="Left" Name="columnChart" Title="Statistic" 
-		VerticalAlignment="Bottom" Width="518">
-            </chartingToolkit:Chart>
-        </ScrollViewer>
+        <chartingToolkit:Chart Name="statistics">
+            <chartingToolkit:Chart.Axes>
+                <chartingToolkit:LinearAxis x:Name="horizontalAxis" Orientation="X" Title="Item"  ShowGridLines="True"/>
+                <chartingToolkit:LinearAxis x:Name="verticalAxis" Orientation="Y" Title="Cost [£]"  ShowGridLines="True"/>
+            </chartingToolkit:Chart.Axes>
+            <chartingToolkit:AreaSeries x:Name="series" DependentValuePath="">
+            </chartingToolkit:AreaSeries>
+        </chartingToolkit:Chart>
     </Grid>
 </Window>

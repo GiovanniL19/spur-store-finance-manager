@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Concurrent;
+using System.Threading;
 
 namespace Main
 {
@@ -16,20 +17,22 @@ namespace Main
     {
         public Task<ConcurrentQueue<Order>> getFilesTask;
         private ConcurrentQueue<Order> DataFile;
+        public CancellationTokenSource cancelGetFiles = new CancellationTokenSource();
 
         public void getFiles(String SelectedPath)
         {
             DataFile = new ConcurrentQueue<Order>();
             getFilesTask = Task<ConcurrentQueue<Order>>.Run(() =>
             {
+                cancelGetFiles.Token.ThrowIfCancellationRequested();
                 string[] files = Directory.GetFiles(SelectedPath);
 
                 if (Properties.Settings.Default.parallel == true)
                 {
-                    ParallelOptions po = new ParallelOptions();
-                    po.MaxDegreeOfParallelism = 1; // uses only set core
+                    //ParallelOptions po = new ParallelOptions();
+                    //po.MaxDegreeOfParallelism = 88; // uses only set core
 
-                    Parallel.ForEach(files, po, file =>
+                    Parallel.ForEach(files, file =>
                     {
                         if (Path.GetExtension(file) == ".csv")
                         {
@@ -103,7 +106,12 @@ namespace Main
                 }
 
                 return DataFile;
-            });
+            }, cancelGetFiles.Token);
+        }
+
+        public void cancel()
+        {
+            cancelGetFiles.Cancel();
         }
     }
 }
