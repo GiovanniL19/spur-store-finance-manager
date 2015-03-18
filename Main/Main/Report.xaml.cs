@@ -153,7 +153,8 @@ namespace Main
                     selectedSupplier.Content = string.Format("{0:C}", stats.supplierSTotal);
 
                     stats.clear();
-
+                    
+                    reportGridGen.ItemsSource = report;
                     status.Content = "Done";
                     if (Properties.Settings.Default.graphPopUp == true)
                     {
@@ -164,7 +165,7 @@ namespace Main
                     sWGen.Stop();
                     timeTakenGen.Content = sWGen.Elapsed;
                     loading.Visibility = Visibility.Hidden;
-                    reportGridGen.ItemsSource = report;
+                    
                 }));
             }
             else

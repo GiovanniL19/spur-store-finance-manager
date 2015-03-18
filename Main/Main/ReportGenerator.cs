@@ -24,6 +24,7 @@ namespace Main
                 {
                     for (int i = 0; i < Result.Count(); i++)
                     {
+                        //Get Stats
                         stats.grandTotal += Result[i].Cost;
                         if (Result[i].Week == weeksSelection && store == Convert.ToString(Result[i].Store))
                         {
@@ -62,6 +63,8 @@ namespace Main
                             stats.supplierSTotal += Result[i].Cost;
                         }
 
+
+                        //FILTER DATA
                         if (Result[i].Week == weeksSelection && Result[i].Store == store && year == Convert.ToString(Result[i].Year) && Result[i].Supplier == supplier && Result[i].Type == type)
                         {
                             Report reportObj = new Report();

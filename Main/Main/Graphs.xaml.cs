@@ -44,10 +44,9 @@ namespace Main
         {
             List<object> graphData = new List<object>();
 
-            for (int i = 0; i < report.Count(); i++)
-            {
+            Parallel.For(0, report.Count(), i => {
                 graphData.Add(new KeyValuePair<string, int>(report[i].Supplier.ToString(), Convert.ToInt32(report[i].Cost)));
-            }
+            });
 
             ((ColumnSeries)mainChart.Series[0]).ItemsSource = graphData;
             mainChart.Visibility = Visibility.Visible;
