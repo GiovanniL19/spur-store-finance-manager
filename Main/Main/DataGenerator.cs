@@ -13,18 +13,18 @@ namespace Main
     /// Developed by Giovanni Lenguito
     /// University: Staffordshire University
     /// Student ID: L010516C
-    public class Folder
+    public class DataGenerator
     {
         public Task<ConcurrentQueue<Order>> getFilesTask;
         private ConcurrentQueue<Order> DataFile;
-        public CancellationTokenSource cancelGetFiles = new CancellationTokenSource();
-
-        public void getFiles(String SelectedPath)
+        public static CancellationTokenSource cancelExecution;
+        
+        public void Execute(String SelectedPath)
         {
             DataFile = new ConcurrentQueue<Order>();
-            getFilesTask = Task<ConcurrentQueue<Order>>.Run(() =>
+            cancelExecution = new CancellationTokenSource();
+            getFilesTask = Task<ConcurrentQueue<Order>>.Factory.StartNew(() =>
             {
-                cancelGetFiles.Token.ThrowIfCancellationRequested();
                 string[] files = Directory.GetFiles(SelectedPath);
 
                 if (Properties.Settings.Default.parallel == true)
@@ -32,39 +32,49 @@ namespace Main
                     //ParallelOptions po = new ParallelOptions();
                     //po.MaxDegreeOfParallelism = 88; // uses only set core
 
-                    Parallel.ForEach(files, file =>
+                    ParallelOptions po = new ParallelOptions();
+                    po.CancellationToken = cancelExecution.Token;
+
+                    try
                     {
-                        if (Path.GetExtension(file) == ".csv")
+                        Parallel.ForEach(files, po, file =>
                         {
-                            try
+                            if (Path.GetExtension(file) == ".csv")
                             {
-                                List<string[]> csv = ParseFile.parseCSVFile(file);
-
-                                file = Path.GetFileName(file);
-
-                                String[] splitItem = file.Split('.')[0].Split('_');
-
-                                foreach (var line in csv)
+                                try
                                 {
-                                    Order order = new Order();
+                                    List<string[]> csv = FileParser.Execute(file);
 
-                                    order.Store = splitItem[0];
-                                    order.Supplier = line[0];
-                                    order.Type = line[1];
+                                    file = Path.GetFileName(file);
 
-                                    order.Cost = Convert.ToDouble(line[2]);
-                                    order.Week = Convert.ToInt32(splitItem[1]);
-                                    order.Year = Convert.ToInt32(splitItem[2]);
+                                    String[] splitItem = file.Split('.')[0].Split('_');
 
-                                    DataFile.Enqueue(order);
+                                    foreach (var line in csv)
+                                    {
+                                        Order order = new Order();
+
+                                        order.Store = splitItem[0];
+                                        order.Supplier = line[0];
+                                        order.Type = line[1];
+
+                                        order.Cost = Convert.ToDouble(line[2]);
+                                        order.Week = Convert.ToInt32(splitItem[1]);
+                                        order.Year = Convert.ToInt32(splitItem[2]);
+
+                                        DataFile.Enqueue(order);
+                                    }
+                                }
+                                catch (Exception e)
+                                {
+                                    Console.WriteLine(e);
                                 }
                             }
-                            catch (Exception e)
-                            {
-                                Console.WriteLine(e);
-                            }
-                        }
-                    });
+                        });
+                    }
+                    catch (OperationCanceledException)
+                    {
+                        Console.WriteLine("Canceled");
+                    }
                 }
                 else
                 {
@@ -76,7 +86,7 @@ namespace Main
                         {
                             try
                             {
-                                List<string[]> csv = ParseFile.parseCSVFile(file);
+                                List<string[]> csv = FileParser.Execute(file);
 
                                 fileInUse = Path.GetFileName(file);
 
@@ -106,12 +116,13 @@ namespace Main
                 }
 
                 return DataFile;
-            }, cancelGetFiles.Token);
+            }, cancelExecution.Token);
         }
 
         public void cancel()
         {
-            cancelGetFiles.Cancel();
+            cancelExecution.Cancel();
+            cancelExecution.Dispose();
         }
     }
 }

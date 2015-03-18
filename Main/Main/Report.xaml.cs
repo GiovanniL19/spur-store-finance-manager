@@ -57,10 +57,9 @@ namespace Main
         }
 
 
-        public Folder folder = new Folder();
-        public GenerateReport gen = new GenerateReport();
-        public Command command;
-
+        public DataGenerator generateData = new DataGenerator();
+        public ReportGenerator generateReport = new ReportGenerator();
+        
         public List<Order> result;
         public List<Report> report;
 
@@ -69,12 +68,15 @@ namespace Main
 
         //Filters
         public int weeksSelection = 0;
-        public string year = "All Years";
+        public string year;
         public string store;
         public string supplier;
         public string type;
 
         public bool view;
+
+        public static CancellationTokenSource cancelTask;
+        public Statistics stats;
 
         private void ReportBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -85,8 +87,9 @@ namespace Main
             else
             {
                 //Generate Report
-                loading.Visibility = Visibility.Visible;
                 status.Content = "Generating...";
+                
+                loading.Visibility = Visibility.Visible;
                 sWGen.Reset();
                 sWGen.Start();
                 reportGridGen.ClearValue(ItemsControl.ItemsSourceProperty);
@@ -99,7 +102,7 @@ namespace Main
                 }
 
                 //Send data to GenerateReport
-                gen.GenerateTheReport(weeksSelection, result.ToList(), store, year, supplier, type);
+                generateReport.Execute(weeksSelection, result.ToList(), store, year, supplier, type);
 
                 //Start the watchReport to wait for task to complete
                 Task watchReport = new Task(this.Report_Update);
@@ -110,9 +113,9 @@ namespace Main
         private void Report_Update()
         {
             //Task will wait until the report is generate and that tasks returns a value
-            gen.reportGenTask.Wait();
+            generateReport.reportGenTask.Wait();
             //Store the returned data in a list full of Report objects
-            report = new List<Report>(gen.reportGenTask.Result);
+            report = new List<Report>(generateReport.reportGenTask.Result);
 
             if (report.Count > 0)
             {
@@ -121,7 +124,7 @@ namespace Main
                     //Prints report to labels and data grid
                     numberOfReport.Content = report.Count();
 
-                    Statistics stats = gen.getStats();
+                    stats = generateReport.getStats();
 
                     gTotal.Content = string.Format("{0:C}", stats.grandTotal);
                     weekTotal.Content = string.Format("{0:C}", stats.weekTotal);
@@ -135,12 +138,13 @@ namespace Main
                     sTStoreWeek.Content = string.Format("{0:C}", stats.supplyTWeek);
                     selectedSupplier.Content = string.Format("{0:C}", stats.supplierSTotal);
 
-                    stats = null;
-                    reportGridGen.ItemsSource = report;
+                    stats.clear();
+
                     status.Content = "Done";
                     sWGen.Stop();
-                    loading.Visibility = Visibility.Hidden;
                     timeTakenGen.Content = sWGen.Elapsed;
+                    loading.Visibility = Visibility.Hidden;
+                    reportGridGen.ItemsSource = report;
                 }));
             }
             else
@@ -154,7 +158,14 @@ namespace Main
             //Select a folder to read from
             cancelBtn.Visibility = Visibility.Visible;
             loading.Visibility = Visibility.Visible;
+
+            sW.Reset();
+            itemsParsedCount.Content = "0";
+            timeTaken.Content = sW.Elapsed;
+
             status.Content = "Loading...";
+            sW.Start(); //start stopwatch
+
             try
             {
                 supplierList.Items.RemoveAt(0);
@@ -165,17 +176,25 @@ namespace Main
                 {
                     yearsList.Items.Clear();
                 }
+                if (supplierList.Items != null)
+                {
+                    supplierList.Items.Clear();
+                }
+                if (supplierTypeList.Items != null)
+                {
+                    supplierTypeList.Items.Clear();
+                }
             }
             catch (Exception) { }
 
-            sW.Start(); //start stopwatch
-
+            cancelTask = new CancellationTokenSource();
             //Send selected folder path to folder class
-            folder.getFiles(path);
+            generateData.Execute(path);
 
             //Start the watchReport to wait for task to complete
-            Task watcherTask = new Task(this.GUI_Update);
-            watcherTask.Start();
+            var watcherTask = Task.Factory.StartNew(() => {
+                this.GUI_Update();
+            }, cancelTask.Token);
 
         }
 
@@ -193,10 +212,10 @@ namespace Main
         private void GUI_Update()
         {
             //Task will wait until the files have been parsed
-            folder.getFilesTask.Wait();
+            generateData.getFilesTask.Wait();
 
             //The parsed data object will be stored in a new list
-            result = new List<Order>(folder.getFilesTask.Result);
+            result = new List<Order>(generateData.getFilesTask.Result);
 
             //Hashset are used to remove duplicates
             HashSet<string> suppliers = new HashSet<string>();
@@ -269,11 +288,19 @@ namespace Main
                 }
                 //End timer and set status to complete
                 sW.Stop();
-                status.Content = "Done";
-                cancelBtn.Visibility = Visibility.Hidden;
+                if (cancelTask.IsCancellationRequested)
+                {
+                    status.Content = "Action Canceled";
+                }
+                else
+                {
+                    status.Content = "Done";
+                }
                 timeTaken.Content = sW.Elapsed;
-                sW.Reset();
+                
+                cancelBtn.Visibility = Visibility.Hidden;
                 loading.Visibility = Visibility.Hidden;
+                
             }));
 
         }
@@ -345,6 +372,7 @@ namespace Main
             catch (Exception) { Dispatcher.Invoke(new Action(() => { MessageBox.Show("Error loading stores"); })); }
 
         }
+
         private void loadStores_Click(object sender, RoutedEventArgs e)
         {
             //Select the store csv
@@ -402,18 +430,28 @@ namespace Main
             if (report != null)
             {
                 Graphs graphs = new Graphs();
+                graphs.setData(report);
                 graphs.Show();
             }
             else
             {
-                MessageBox.Show("You need to generate a report before you can view graphs");
+                MessageBox.Show("You need to generate a report before you can view graphs", "Generate Report", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
         private void cancelTasksBtn_Click(object sender, RoutedEventArgs e)
         {
-            folder.cancel();
-            MessageBox.Show("Cancelling...");
+            if (cancelTask != null)
+            {
+                generateData.cancel();
+                cancelTask.Cancel();
+                cancelTask.Dispose();
+                MessageBox.Show("Operation canceled, not all data has been generated", "Canceled", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Can not cancel, an error occurred", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

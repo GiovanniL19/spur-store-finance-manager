@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Main
 {
-    public class GenerateReport
+    public class ReportGenerator
     {
         public Task<ConcurrentQueue<Report>> reportGenTask;
         public ConcurrentQueue<Report> report;
         public Statistics stats = new Statistics();
 
-        public void GenerateTheReport(int weeksSelection, List<Order> Result, string store, string year, string supplier, string type)
+        public void Execute(int weeksSelection, List<Order> Result, string store, string year, string supplier, string type)
         {
             report = new ConcurrentQueue<Report>();
 
@@ -133,7 +133,7 @@ namespace Main
                             report.Enqueue(reportObj);
                         }
                         else if (Result[i].Week == weeksSelection && Result[i].Store == store && year == Convert.ToString(Result[i].Year) && Result[i].Supplier == supplier && Result[i].Type != type)
-                        {
+                        {   
                             Report reportObj = new Report();
 
                             reportObj.Supplier = Result[i].Supplier;
@@ -146,6 +146,8 @@ namespace Main
 
                             report.Enqueue(reportObj);
                         }
+
+                        //Linq statement needs implementing...
                         //var report = result.Where(o => o.Store == store && o.Supplier == supplier && o.Type == type && o.Week.ToString() == weeksSelection.ToString() && o.Year.ToString() == year.ToString());
                     }
 

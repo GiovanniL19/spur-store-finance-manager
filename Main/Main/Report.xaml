@@ -206,9 +206,9 @@
             <Label Content="Parsed Data:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="White"/>
             <Label x:Name="itemsParsedCount" Content="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="White"/>
             <Label Content="Parse Time:" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="White"/>
-            <Label x:Name="timeTaken" Content="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="White"/>
+            <Label x:Name="timeTaken" Content="00:00:00" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="White"/>
             <Label Content="Generate Time:" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="White"/>
-            <Label x:Name="timeTakenGen" Content="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="White"/>
+            <Label x:Name="timeTakenGen" Content="00:00:00" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="White"/>
             <Label x:Name="typeOfEx" DockPanel.Dock="Right" Content="Parallel" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="White" Margin="0,0,25,0" Background="#FF272727"/>
             <Button x:Name="cancelBtn" Click="cancelTasksBtn_Click" DockPanel.Dock="Right" Background="#FF272727" Foreground="#FFFFFF" FontSize="9" BorderThickness="0" ToolTip="Cancel Task" Cursor="Hand" Margin="0,0,2,0" IsCancel="True" Width="15" Visibility="Hidden">X</Button>
             <ProgressBar x:Name="loading" Height="14" Width="133" DockPanel.Dock="Right" Foreground="#FF66B2CF" Background="{x:Null}" IsIndeterminate="True" Margin="0,5" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"/>

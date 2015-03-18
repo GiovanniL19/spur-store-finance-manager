@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Main</RootNamespace>
-    <AssemblyName>Main</AssemblyName>
+    <AssemblyName>CSV Manager</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -57,7 +57,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>folder.ico</ApplicationIcon>
+    <ApplicationIcon>Icons\folder.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>Main.App</StartupObject>
@@ -126,7 +126,7 @@
     </Compile>
     <Compile Include="Objects\CBItem.cs" />
     <Compile Include="Command.cs" />
-    <Compile Include="GenerateReport.cs" />
+    <Compile Include="ReportGenerator.cs" />
     <Compile Include="Objects\Report.cs" />
     <Compile Include="Objects\Statistics.cs" />
     <Compile Include="Settings.xaml.cs">
@@ -151,9 +151,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Folder.cs" />
+    <Compile Include="DataGenerator.cs" />
     <Compile Include="Objects\Order.cs" />
-    <Compile Include="ParseFile.cs" />
+    <Compile Include="FileParser.cs" />
     <Compile Include="Report.xaml.cs">
       <DependentUpon>Report.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -207,9 +207,6 @@
     <Resource Include="Icons\filter.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\sad.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\save.png" />
   </ItemGroup>
   <ItemGroup>
@@ -222,7 +219,7 @@
     <Resource Include="Icons\calculator.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="folder.ico" />
+    <Resource Include="Icons\folder.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -243,9 +240,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\statistics.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,11 +16,6 @@ C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment
 C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\Manager.csprojResolveAssemblyReference.cache
 C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\About.baml
 C:\Users\Giovanni\Google Drive\Year 2\Task-Based Software Engineering\Assignment 1\Main\Main\obj\Debug\About.g.cs
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.exe.config
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.exe
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.pdb
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.exe
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.pdb
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\About.baml
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Report.baml
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Welcome.baml
@@ -28,8 +23,6 @@ C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\About.g.cs
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Report.g.cs
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Welcome.g.cs
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\App.g.cs
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main_MarkupCompile.cache
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.g.resources
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.Properties.Resources.resources
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Manager.csproj.GenerateResource.Cache
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.exe.config
@@ -54,11 +47,6 @@ D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.application
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.TrustInfo.xml
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.exe.manifest
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.application
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.exe.manifest
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.application
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.TrustInfo.xml
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.exe.manifest
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.application
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Settings.baml
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Settings.g.cs
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Manager.csprojResolveAssemblyReference.cache
@@ -74,3 +62,15 @@ C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Contro
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.Input.Toolkit.pdb
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.Layout.Toolkit.pdb
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\WPFToolkit.pdb
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\CSV Manager.exe.config
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\CSV Manager.exe.manifest
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\CSV Manager.application
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\CSV Manager.exe
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\CSV Manager.pdb
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager_MarkupCompile.cache
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.g.resources
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.TrustInfo.xml
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.exe.manifest
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.application
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.exe
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.pdb

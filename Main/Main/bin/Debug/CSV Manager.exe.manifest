@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Main.exe" version="1.0.2.2" publicKeyToken="0000000000000000" language="en-GB" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="folder.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <asmv1:assemblyIdentity name="CSV Manager.exe" version="1.0.2.2" publicKeyToken="0000000000000000" language="en-GB" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Icons\folder.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Main" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-    <commandLine file="Main.exe" parameters="" />
+    <assemblyIdentity name="CSV Manager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="CSV Manager.exe" parameters="" />
   </entryPoint>
   <trustInfo>
     <security>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Main.exe" size="837632">
-      <assemblyIdentity name="Main" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CSV Manager.exe" size="834560">
+      <assemblyIdentity name="CSV Manager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+zMNTfGLds7GHshkL0CNhUiYPYAuMXTHr0BVnOuMZiw=</dsig:DigestValue>
+        <dsig:DigestValue>BkdQQqXn/pIBsqgBkIMfSXqFsDDSNf8tVyYnWuZQtdc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -102,22 +102,22 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="folder.ico" size="370070">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/mH7UYWr+W9xx4kE37EUoiFC/JdYTVOFOpM0YAtinsg=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Main.exe.config" size="1246">
+  <file name="CSV Manager.exe.config" size="1246">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>JFQjtvq71VZoijoRD13c/moh5oSdzkIuSdClQRMVTYU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Icons\folder.ico" size="370070">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>/mH7UYWr+W9xx4kE37EUoiFC/JdYTVOFOpM0YAtinsg=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

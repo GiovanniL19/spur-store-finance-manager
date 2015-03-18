@@ -83,7 +83,7 @@ namespace Main {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Main;component/welcome.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CSV Manager;component/welcome.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\Welcome.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

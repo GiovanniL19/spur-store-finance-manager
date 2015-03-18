@@ -19,5 +19,20 @@ namespace Main.Objects
         public double supplyTStore { get; set; }
         public double supplyTStoreWeek { get; set; }
         public double supplierSTotal { get; set; }
+
+        public void clear()
+        {
+            selectedTotal = 0;
+            weekTotal = 0;
+            yearTotal = 0;
+            grandTotal = 0;
+            storeTotal = 0;
+            allStoresWeek = 0;
+            supplyTAll = 0;
+            supplyTWeek = 0;
+            supplyTStore = 0;
+            supplyTStoreWeek = 0;
+            supplierSTotal = 0;
+        }
     }
 }

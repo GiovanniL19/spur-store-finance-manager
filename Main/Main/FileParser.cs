@@ -11,9 +11,9 @@ namespace Main
     /// Developed by Giovanni Lenguito
     /// University: Staffordshire University
     /// Student ID: L010516C
-    class ParseFile
+    class FileParser
     {
-        public static List<string[]> parseCSVFile(string path)
+        public static List<string[]> Execute(string path)
         {
             List<string[]> output = new List<string[]>();
 
