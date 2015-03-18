@@ -89,8 +89,6 @@ namespace Main
         public string supplier;
         public string type;
 
-        public bool view;
-
         public static CancellationTokenSource cancelTask;
         public Statistics stats;
 
