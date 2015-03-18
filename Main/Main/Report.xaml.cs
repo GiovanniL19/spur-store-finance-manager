@@ -37,11 +37,6 @@ namespace Main
             {
                 loadPathBtn.Visibility = Visibility.Visible;
             }
-            if (Properties.Settings.Default.welcome == true)
-            {
-                Welcome welcomeScreen = new Welcome();
-                welcomeScreen.Show();
-            }
             if (Properties.Settings.Default.parallel == true)
             {
                 typeOfEx.Content = "Parallel";
@@ -52,7 +47,28 @@ namespace Main
             }
             if (Properties.Settings.Default.storesPath != "")
             {
-                selectStore(Properties.Settings.Default.storesPath);
+                if (Directory.Exists(Properties.Settings.Default.storesPath) || File.Exists(Properties.Settings.Default.storesPath)) {
+                    selectStore(Properties.Settings.Default.storesPath);
+                }
+                else
+                {
+                    MessageBox.Show("Store File is no longer available, it may of be moved or deleted " + "\n" + "Please go to settings and select a store file or click 'Load Stores'" + "\n" + "APPLICATION WILL NOW RESTART", "File Missing", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Properties.Settings.Default.storesPath = "";
+                    Properties.Settings.Default.Save();
+                    System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                    Application.Current.Shutdown(); 
+                }
+            }
+
+            Loaded += onLoad_Loaded;
+        }
+
+        private void onLoad_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Properties.Settings.Default.welcome == true)
+            {
+                Welcome welcomeScreen = new Welcome();
+                welcomeScreen.Show();
             }
         }
 
@@ -141,6 +157,11 @@ namespace Main
                     stats.clear();
 
                     status.Content = "Done";
+                    if (Properties.Settings.Default.graphPopUp == true)
+                    {
+                        Graphs graph = new Graphs();
+                        graph.setData(report);
+                    }
                     sWGen.Stop();
                     timeTakenGen.Content = sWGen.Elapsed;
                     loading.Visibility = Visibility.Hidden;
@@ -155,47 +176,58 @@ namespace Main
 
         public void selectFolder(string path)
         {
-            //Select a folder to read from
-            cancelBtn.Visibility = Visibility.Visible;
-            loading.Visibility = Visibility.Visible;
-
-            sW.Reset();
-            itemsParsedCount.Content = "0";
-            timeTaken.Content = sW.Elapsed;
-
-            status.Content = "Loading...";
-            sW.Start(); //start stopwatch
-
-            try
+            if (Directory.Exists(path) || File.Exists(path))
             {
-                supplierList.Items.RemoveAt(0);
-                supplierTypeList.Items.RemoveAt(0);
-                yearsList.Items.RemoveAt(0);
+                //Select a folder to read from
+                cancelBtn.Visibility = Visibility.Visible;
+                loading.Visibility = Visibility.Visible;
 
-                if (yearsList.Items != null)
+                sW.Reset();
+                itemsParsedCount.Content = "0";
+                timeTaken.Content = sW.Elapsed;
+
+                status.Content = "Loading...";
+                sW.Start(); //start stopwatch
+
+                try
                 {
-                    yearsList.Items.Clear();
+                    supplierList.Items.RemoveAt(0);
+                    supplierTypeList.Items.RemoveAt(0);
+                    yearsList.Items.RemoveAt(0);
+
+                    if (yearsList.Items != null)
+                    {
+                        yearsList.Items.Clear();
+                    }
+                    if (supplierList.Items != null)
+                    {
+                        supplierList.Items.Clear();
+                    }
+                    if (supplierTypeList.Items != null)
+                    {
+                        supplierTypeList.Items.Clear();
+                    }
                 }
-                if (supplierList.Items != null)
+                catch (Exception) { }
+
+                cancelTask = new CancellationTokenSource();
+                //Send selected folder path to folder class
+                generateData.Execute(path);
+
+                //Start the watchReport to wait for task to complete
+                var watcherTask = Task.Factory.StartNew(() =>
                 {
-                    supplierList.Items.Clear();
-                }
-                if (supplierTypeList.Items != null)
-                {
-                    supplierTypeList.Items.Clear();
-                }
+                    this.GUI_Update();
+                }, cancelTask.Token);
             }
-            catch (Exception) { }
-
-            cancelTask = new CancellationTokenSource();
-            //Send selected folder path to folder class
-            generateData.Execute(path);
-
-            //Start the watchReport to wait for task to complete
-            var watcherTask = Task.Factory.StartNew(() => {
-                this.GUI_Update();
-            }, cancelTask.Token);
-
+            else
+            {
+                MessageBox.Show("Selected folder is no longer available, it may of be moved or deleted " + "\n" + "Please go to settings and select a folder or click 'Select Folder'" + "\n" + "APPLICATION WILL NOW RESTART", "File Missing", MessageBoxButton.OK, MessageBoxImage.Warning);
+                Properties.Settings.Default.path = null;
+                Properties.Settings.Default.Save();
+                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                Application.Current.Shutdown(); 
+            }
         }
 
         private void selectFolderBtn_Click(object sender, RoutedEventArgs e)

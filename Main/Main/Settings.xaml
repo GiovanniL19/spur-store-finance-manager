@@ -8,14 +8,15 @@
         </Grid.RowDefinitions>
         <Label Content="Settings" HorizontalAlignment="Left" Margin="55,15,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Image HorizontalAlignment="Left" Height="39" Margin="10,10,0,0" VerticalAlignment="Top" Width="40" Source="Icons/settings.png"/>
-        <DockPanel Margin="11,92,10,108">
+        <DockPanel Margin="11,92,10,85">
             <CheckBox x:Name="welcomeCheckBtn" DockPanel.Dock="Top" Content="Show Welcome Screen" VerticalAlignment="Top" Cursor="Hand" Margin="0,0,279,10"/>
-            <CheckBox x:Name="parallelCheckBtn" DockPanel.Dock="Top" Content="Run In Parallel" VerticalAlignment="Top" Cursor="Hand"/>
+            <CheckBox x:Name="parallelCheckBtn" DockPanel.Dock="Top" Content="Run In Parallel" VerticalAlignment="Top" Cursor="Hand" Margin="0,0,279,10"/>
+            <CheckBox x:Name="graphCheckBtn" DockPanel.Dock="Top" Content="Open Graph After Generate" VerticalAlignment="Top" Cursor="Hand"/>
             <Label Content="Set Default Folder Path" DockPanel.Dock="Top" FontSize="10" Margin="0,20,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="folderPathText" DockPanel.Dock="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="320"/>
             <Button Content="Select Path" DockPanel.Dock="Right" VerticalAlignment="Top" Width="87" Margin="0,0,12,0" Height="21" Background="White" Foreground="#FF424242" BorderBrush="#FF4D4D4D" Click="selectPath_Click" Cursor="Hand" FontSize="10"/>
         </DockPanel>
-        <DockPanel Margin="10,228,10,68">
+        <DockPanel Margin="10,228,10,110">
             <Label Content="Set Default Stores Path" DockPanel.Dock="Top" FontSize="10" Margin="0,0,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="storesPathText" DockPanel.Dock="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="320"/>
             <Button Content="Select Path" DockPanel.Dock="Right" VerticalAlignment="Top" Width="87" Margin="0,0,12,0" Height="21" Background="White" Foreground="#FF424242" BorderBrush="#FF4D4D4D" Click="selectStorePath_Click" Cursor="Hand" FontSize="10"/>

@@ -25,9 +25,6 @@ C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Welcome.g.cs
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\App.g.cs
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.Properties.Resources.resources
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Manager.csproj.GenerateResource.Cache
-D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.exe.config
-D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.exe
-D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.pdb
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Manager.csprojResolveAssemblyReference.cache
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\About.baml
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Report.baml
@@ -36,17 +33,8 @@ D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\About.g.cs
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Report.g.cs
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Welcome.g.cs
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\App.g.cs
-D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main_MarkupCompile.cache
-D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.g.resources
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.Properties.Resources.resources
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Manager.csproj.GenerateResource.Cache
-D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.exe
-D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.pdb
-D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.exe.manifest
-D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\Main.application
-D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.TrustInfo.xml
-D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.exe.manifest
-D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Main.application
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Settings.baml
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Settings.g.cs
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Manager.csprojResolveAssemblyReference.cache
@@ -74,3 +62,21 @@ C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.exe.manif
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.application
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.exe
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.pdb
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\CSV Manager.exe.config
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.exe
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.pdb
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\CSV Manager.exe.manifest
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\CSV Manager.application
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\CSV Manager.exe
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\CSV Manager.pdb
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.Input.Toolkit.pdb
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.Layout.Toolkit.pdb
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\WPFToolkit.pdb
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Graphs.baml
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Graphs.g.cs
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager_MarkupCompile.cache
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.g.resources
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.TrustInfo.xml
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.exe.manifest
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.application

@@ -1,6 +1,6 @@
 ﻿<Window x:Class="Main.Welcome"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="349" Width="554" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ShowInTaskbar="False" Icon="Icons/stores.png" Topmost="True">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="349" Width="554" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ShowInTaskbar="False" Icon="Icons/stores.png">
     <Grid Margin="0,0,0,1">
         <Grid.RowDefinitions>
             <RowDefinition Height="248*"/>

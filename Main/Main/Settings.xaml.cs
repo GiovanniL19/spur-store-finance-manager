@@ -41,6 +41,16 @@ namespace Main
             {
                 parallelCheckBtn.IsChecked = false;
             }
+
+            if (Properties.Settings.Default.graphPopUp == true)
+            {
+                graphCheckBtn.IsChecked = true;
+            }
+            else
+            {
+                graphCheckBtn.IsChecked = false;
+            }
+
             folderPathText.Text = Properties.Settings.Default.path;
             storesPathText.Text = Properties.Settings.Default.storesPath;
         }
@@ -75,6 +85,15 @@ namespace Main
             {
                 Properties.Settings.Default.parallel = false;
             }
+            if (graphCheckBtn.IsChecked == true)
+            {
+                Properties.Settings.Default.graphPopUp = true;
+            }
+            else
+            {
+                Properties.Settings.Default.graphPopUp = false;
+            }
+            
             Properties.Settings.Default.Save();
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown(); 

@@ -23,17 +23,24 @@ namespace Main
     {
         public Graphs()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
         public List<Report> report = new List<Report>();
         
         public void setData(List<Report> report)
         {
             this.report = report;
+            if (Properties.Settings.Default.graphPopUp == true)
+            {
+                loadGraph();
+            }
         }
 
         private void loadBtn_Click(object sender, RoutedEventArgs e)
+        {
+            loadGraph();
+        }
+        public void loadGraph()
         {
             List<object> graphData = new List<object>();
 
@@ -43,6 +50,11 @@ namespace Main
             }
 
             ((ColumnSeries)mainChart.Series[0]).ItemsSource = graphData;
+            mainChart.Visibility = Visibility.Visible;
+        }
+        private void cancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
