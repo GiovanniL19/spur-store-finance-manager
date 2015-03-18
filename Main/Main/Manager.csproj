@@ -125,7 +125,6 @@
       <DependentUpon>Graphs.xaml</DependentUpon>
     </Compile>
     <Compile Include="Objects\CBItem.cs" />
-    <Compile Include="Command.cs" />
     <Compile Include="ReportGenerator.cs" />
     <Compile Include="Objects\Report.cs" />
     <Compile Include="Objects\Statistics.cs" />

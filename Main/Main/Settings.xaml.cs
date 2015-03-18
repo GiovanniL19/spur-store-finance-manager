@@ -106,7 +106,9 @@ namespace Main
 
             Properties.Settings.Default.welcome = true;
             Properties.Settings.Default.parallel = true;
+            Properties.Settings.Default.graphPopUp = false;
             Properties.Settings.Default.Save();
+
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown(); 
         }

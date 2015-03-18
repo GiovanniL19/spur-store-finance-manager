@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CSV Manager.exe" size="837120">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CSV Manager.exe" size="836608">
       <assemblyIdentity name="CSV Manager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>++e9xd4Zypt4/QqSwMI9Uc+eeHULhaTc4XxFbePkN9A=</dsig:DigestValue>
+        <dsig:DigestValue>oskJPwJftKEnILEHLYoP9jxUAaGcAD745R1Yk3JIiYE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
