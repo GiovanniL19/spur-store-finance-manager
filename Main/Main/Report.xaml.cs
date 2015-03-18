@@ -161,6 +161,7 @@ namespace Main
                     {
                         Graphs graph = new Graphs();
                         graph.setData(report);
+                        graph.Show();
                     }
                     sWGen.Stop();
                     timeTakenGen.Content = sWGen.Elapsed;
