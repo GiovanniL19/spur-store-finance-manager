@@ -161,6 +161,7 @@ namespace Main
                     
                     reportGridGen.ItemsSource = report;
                     status.Content = "Done";
+                    graphDisplay = new Graph();
                     graphDisplay.setData(report);
                     if (Properties.Settings.Default.graphPopUp == true)
                     {

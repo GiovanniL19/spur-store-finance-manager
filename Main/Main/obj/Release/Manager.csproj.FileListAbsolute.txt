@@ -32,3 +32,28 @@ C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\CSV Manager.exe
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\CSV Manager.pdb
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\Graph.baml
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\Graph.g.cs
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Release\CSV Manager.exe.config
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Release\CSV Manager.exe.manifest
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Release\CSV Manager.application
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Release\CSV Manager.exe
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Release\CSV Manager.pdb
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\About.baml
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\Graph.baml
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\Report.baml
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\Settings.baml
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\Welcome.baml
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\About.g.cs
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\Graph.g.cs
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\Report.g.cs
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\Settings.g.cs
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\Welcome.g.cs
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\App.g.cs
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\CSV Manager_MarkupCompile.cache
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\CSV Manager.g.resources
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\Main.Properties.Resources.resources
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\Manager.csproj.GenerateResource.Cache
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\CSV Manager.TrustInfo.xml
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\CSV Manager.exe.manifest
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\CSV Manager.application
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\CSV Manager.exe
+D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Release\CSV Manager.pdb
