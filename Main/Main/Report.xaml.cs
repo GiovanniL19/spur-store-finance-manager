@@ -62,7 +62,10 @@ namespace Main
 
             Loaded += onLoad_Loaded;
         }
-
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
         private void onLoad_Loaded(object sender, RoutedEventArgs e)
         {
             if (Properties.Settings.Default.welcome == true)
@@ -91,6 +94,8 @@ namespace Main
 
         public static CancellationTokenSource cancelTask;
         public Statistics stats;
+        public Graph graphDisplay = new Graph();
+
 
         private void ReportBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -156,11 +161,10 @@ namespace Main
                     
                     reportGridGen.ItemsSource = report;
                     status.Content = "Done";
+                    graphDisplay.setData(report);
                     if (Properties.Settings.Default.graphPopUp == true)
                     {
-                        Graphs graph = new Graphs();
-                        graph.setData(report);
-                        graph.Show();
+                        graphDisplay.Show();
                     }
                     sWGen.Stop();
                     timeTakenGen.Content = sWGen.Elapsed;
@@ -461,7 +465,7 @@ namespace Main
         {
             if (report != null)
             {
-                Graphs graphs = new Graphs();
+                Graph graphs = new Graph();
                 graphs.setData(report);
                 graphs.Show();
             }

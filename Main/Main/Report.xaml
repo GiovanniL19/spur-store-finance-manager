@@ -28,7 +28,7 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="reportGridGen" Margin="197,103,572,24" Background="White" BorderBrush="#FF787878" SelectionMode="Extended" Foreground="#FF464646" BorderThickness="0" HorizontalGridLinesBrush="#FFC3C3C3" VerticalGridLinesBrush="#FFC3C3C3" GridLinesVisibility="Vertical" HeadersVisibility="Column" CanUserReorderColumns="False" CanUserSortColumns="False" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid x:Name="reportGridGen" Margin="197,103,572,24" Background="White" BorderBrush="#FF787878" SelectionMode="Extended" Foreground="#FF464646" BorderThickness="0" HorizontalGridLinesBrush="#FFC3C3C3" VerticalGridLinesBrush="#FFC3C3C3" GridLinesVisibility="Vertical" HeadersVisibility="Column" CanUserReorderColumns="False" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="White"/>
@@ -160,10 +160,10 @@
                     <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"><Run Text="Calculator"/></TextBlock>
                 </StackPanel>
             </Button>
-            <Button VerticalAlignment="Center" Height="50" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Click="graphBtn_Click" HorizontalAlignment="Center" Width="65" BorderThickness="0" ToolTip="Open Graphs" Margin="0,4.5">
+            <Button VerticalAlignment="Center" Height="50" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Click="graphBtn_Click" HorizontalAlignment="Center" Width="65" BorderThickness="0" ToolTip="Open Graph" Margin="0,4.5">
                 <StackPanel>
                     <Image x:Name="graph" Height="30" Width="30" Source="Icons/statistics.png" />
-                    <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"><Run Text="Graphs"/></TextBlock>
+                    <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"><Run Text="Graph"/></TextBlock>
                 </StackPanel>
             </Button>
             <Button x:Name="loadPathBtn" VerticalAlignment="Center" Height="50" Background="Transparent" BorderBrush="Transparent" Cursor="Hand" Click="loadPath_Click" HorizontalAlignment="Center" Width="65" BorderThickness="0" ToolTip="Load" Margin="0,4.5" Visibility="Hidden">
@@ -180,7 +180,7 @@
             </Button>
         </DockPanel>
         <DockPanel x:Name="bar1"  Height="30" LastChildFill="False" VerticalAlignment="Top" Background="#FF3C3C3C">
-            <Menu DockPanel.Dock="Top" Height="20" Background="{x:Null}" Foreground="White" FontSize="10" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="2,2,0,0" >
+            <Menu DockPanel.Dock="Top" Height="20" Background="{x:Null}" Foreground="White" FontSize="10" Margin="0,5,0,0" VerticalAlignment="Center" Padding="2,2,0,0" >
                 <MenuItem Header="_File" Cursor="Hand" Foreground="White" Background="{x:Null}" FontSize="10">
                     <MenuItem Foreground="Black" Header="_Select Folder" Cursor="Hand" Click="selectFolderBtn_Click"/>
                     <MenuItem Foreground="Black" Header="_Generate Report" Cursor="Hand" Click="ReportBtn_Click"/>

@@ -19,41 +19,41 @@ namespace Main
     /// <summary>
     /// Interaction logic for Graphs.xaml
     /// </summary>
-    public partial class Graphs : Window
+    public partial class Graph : Window
     {
-        public Graphs()
+        public Graph()
         {
             InitializeComponent();            
         }
-        public List<Report> report = new List<Report>();
-        
-        public void setData(List<Report> report)
+        public List<object> graphData;
+
+        public void setData(List<Report> reports)
         {
-            this.report = report;
-            if (Properties.Settings.Default.graphPopUp == true)
+            graphData = new List<object>();
+
+            var suppliers = reports.GroupBy(r => r.Supplier, (key, g) => new { Supplier = key, Reports = g.ToList()});
+
+            foreach(var s in suppliers)
             {
-                loadGraph();
+                graphData.Add(new KeyValuePair<string, double>(s.Supplier + "\n" + string.Format("{0:C}",s.Reports.Sum(o => o.Cost)), s.Reports.Sum(o => o.Cost)));
             }
+           
+            loadGraph();
         }
 
         private void loadBtn_Click(object sender, RoutedEventArgs e)
         {
             loadGraph();
         }
+
         public void loadGraph()
         {
-            List<object> graphData = new List<object>();
-
-            Parallel.For(0, report.Count(), i => {
-                graphData.Add(new KeyValuePair<string, int>(report[i].Supplier.ToString(), Convert.ToInt32(report[i].Cost)));
-            });
-
             ((ColumnSeries)mainChart.Series[0]).ItemsSource = graphData;
             mainChart.Visibility = Visibility.Visible;
         }
         private void cancelBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
     }
 }

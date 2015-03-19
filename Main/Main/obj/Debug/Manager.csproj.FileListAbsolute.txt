@@ -28,8 +28,6 @@ C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Manager.csproj.Genera
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Settings.baml
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Settings.g.cs
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Manager.csprojResolveAssemblyReference.cache
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Graphs.baml
-C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Graphs.g.cs
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.Input.Toolkit.dll
 C:\Users\Giovanni\Documents\csv-manage\Main\Main\bin\Debug\System.Windows.Controls.Layout.Toolkit.dll
@@ -76,3 +74,5 @@ D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.exe.manif
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.application
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.exe
 D:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\CSV Manager.pdb
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Graph.baml
+C:\Users\Giovanni\Documents\csv-manage\Main\Main\obj\Debug\Graph.g.cs
